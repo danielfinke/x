@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DustinBrett/x.git"
+    "url": "git+https://github.com/danielfinke/x.git"
   },
   "author": "Dustin Brett",
   "license": "MIT"
