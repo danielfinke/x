@@ -3,11 +3,11 @@ name: Tests
 on: push
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install modules
+      - name: Install Modules
         run: npm install
-      - name: Run tests
+      - name: Run Tests
         run: npm test
