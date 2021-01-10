@@ -30,7 +30,13 @@
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "react/jsx-props-no-spreading": "off",
     "simple-import-sort/exports": "error",
-    "simple-import-sort/imports": "error"
+    "simple-import-sort/imports": [
+      "error",
+      {
+        // https://github.com/lydell/eslint-plugin-simple-import-sort/blob/main/examples/.eslintrc.js#L121
+        "groups": [["\u0000$"], ["^\\u0000"], ["^@?\\w"], ["^"], ["^\\."]]
+      }
+    ]
   },
   "settings": {
     "import/parsers": {
