@@ -25,10 +25,10 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
         <title>{name}</title>
         <meta name="description" content={description} />
       </Head>
+      <GlobalStyle />
       <ThemeProvider theme={defaultTheme}>
         <Component {...pageProps} />
       </ThemeProvider>
-      <GlobalStyle />
     </>
   );
 }
