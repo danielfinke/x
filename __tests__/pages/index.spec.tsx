@@ -1,23 +1,19 @@
 import { render } from '@testing-library/react';
+import StyledApp from 'components/pages/StyledApp';
 import Index from 'pages/index';
-import { ThemeProvider } from 'styled-components';
-import defaultTheme from 'themes/default.json';
 
 type ExtraRenderParams = Parameters<typeof render>;
 /**
- * Wrap testing library `render` to always provide the default styled components theme
+ * Wrap testing library `render` to always render the app using the default styling
  *
  * @param param0 arguments normally provided to `render`
  * @returns normal `render` return value
  */
-const renderWithTheme = (...[children, ...args]: ExtraRenderParams) =>
-  render(
-    <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>,
-    ...args
-  );
+const renderStyled = (...[children, ...args]: ExtraRenderParams) =>
+  render(<StyledApp>{children}</StyledApp>, ...args);
 
 test('renders index page', () => {
-  const { getByText } = renderWithTheme(<Index />);
+  const { getByText } = renderStyled(<Index />);
   const helloWorldElement = getByText('Hello, world!');
 
   expect(helloWorldElement).toBeInTheDocument();
