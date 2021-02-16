@@ -14,7 +14,6 @@ const renderStyled = (...[children, ...args]: ExtraRenderParams) =>
 
 test('renders index page', () => {
   const { getByText } = renderStyled(<Index />);
-  const helloWorldElement = getByText('Hello, world!');
 
-  expect(helloWorldElement).toBeInTheDocument();
+  expect(getByText('Hello, world!')).toBeInTheDocument();
 });
