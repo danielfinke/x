@@ -3,7 +3,7 @@ import type { StyledAppProps } from 'types/components/pages/StyledApp';
 
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'styles/GlobalStyle';
-import defaultTheme from 'themes/default.json';
+import defaultTheme from 'styles/themes.json';
 
 const StyledApp: FC<StyledAppProps> = ({ children, theme = defaultTheme }) => (
   <>
