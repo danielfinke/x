@@ -1,5 +1,7 @@
 {
-  "colors": {
-    "primary": "#008000"
+  "default": {
+    "colors": {
+      "primary": "#008000"
+    }
   }
 }
