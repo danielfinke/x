@@ -1,7 +1,12 @@
 import type { ReactElement } from 'react';
 
-import ProcessLoader from 'contexts/process';
+import WindowManager from 'components/system/WindowManager';
+import { ProcessProvider } from 'contexts/process';
 
 export default function Home(): ReactElement {
-  return <ProcessLoader />;
+  return (
+    <ProcessProvider>
+      <WindowManager />
+    </ProcessProvider>
+  );
 }
