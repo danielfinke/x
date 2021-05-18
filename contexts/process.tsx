@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import type { Processes } from 'types/utils/processDirectory';
+import type { Processes } from 'types/contexts/process';
 
 import { createContext, useState } from 'react';
 import processDirectory from 'utils/processDirectory';

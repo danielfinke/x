@@ -1,4 +1,4 @@
-import type { Processes } from 'types/utils/processDirectory';
+import type { Processes } from 'types/contexts/process';
 
 import dynamic from 'next/dynamic';
 
