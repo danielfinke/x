@@ -1,13 +1,9 @@
 import type { FC } from 'react';
-import type { Processes } from 'types/contexts/process';
+import type { ProcessContextState } from 'types/contexts/process';
 
 import useProcessContextState from 'hooks/useProcessContextState';
 import { createContext } from 'react';
 import processDirectory from 'utils/processDirectory';
-
-export type ProcessContextState = {
-  processes: Processes;
-};
 
 const ProcessContext = createContext<ProcessContextState>({ processes: {} });
 ProcessContext.displayName = 'ProcessContext';
