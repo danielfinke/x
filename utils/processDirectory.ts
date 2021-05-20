@@ -4,7 +4,8 @@ import dynamic from 'next/dynamic';
 
 const processDirectory: Processes = {
   HelloWorld: {
-    Component: dynamic(() => import('components/apps/HelloWorld'))
+    Component: dynamic(() => import('components/apps/HelloWorld')),
+    hasWindow: true
   }
 };
 
