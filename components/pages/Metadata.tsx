@@ -10,7 +10,7 @@ import {
 const Metadata: FC<MetadataProps> = ({
   description = packageDescription,
   title = packageName
-}: MetadataProps) => (
+}) => (
   <Head>
     <meta name="description" content={description} />
     <title>{title}</title>
