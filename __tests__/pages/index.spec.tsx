@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import StyledApp from 'components/pages/StyledApp';
+import { SessionProvider } from 'contexts/session';
 import Index from 'pages/index';
 
 type ExtraRenderParams = Parameters<typeof render>;
@@ -10,7 +11,12 @@ type ExtraRenderParams = Parameters<typeof render>;
  * @returns normal `render` return value
  */
 const renderStyled = (...[children, ...args]: ExtraRenderParams) =>
-  render(<StyledApp>{children}</StyledApp>, ...args);
+  render(
+    <SessionProvider>
+      <StyledApp>{children}</StyledApp>
+    </SessionProvider>,
+    ...args
+  );
 
 test('renders index page', () => {
   const { getByText } = renderStyled(<Index />);
