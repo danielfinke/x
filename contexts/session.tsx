@@ -10,10 +10,10 @@ const SessionContext = createContext<SessionContextState>(
 );
 SessionContext.displayName = 'SessionContext';
 
+const { Consumer, Provider } = SessionContext;
+
 export const SessionProvider: FC = ({ children }) => (
-  <SessionContext.Provider value={useSessionContextState()}>
-    {children}
-  </SessionContext.Provider>
+  <Provider value={useSessionContextState()}>{children}</Provider>
 );
 
-export const SessionConsumer = SessionContext.Consumer;
+export const SessionConsumer = Consumer;
