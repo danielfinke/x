@@ -1,8 +1,5 @@
 import type { FC } from 'react';
-import type {
-  ProcessContextState,
-  ProcessProviderProps
-} from 'types/contexts/process';
+import type { ProcessContextState } from 'types/contexts/process';
 
 import useProcessContextState from 'hooks/useProcessContextState';
 import { createContext } from 'react';
@@ -15,13 +12,8 @@ ProcessContext.displayName = 'ProcessContext';
 
 const { Consumer, Provider } = ProcessContext;
 
-export const ProcessProvider: FC<ProcessProviderProps> = ({
-  children,
-  startupProcesses
-}) => (
-  <Provider value={useProcessContextState(startupProcesses)}>
-    {children}
-  </Provider>
+export const ProcessProvider: FC = ({ children }) => (
+  <Provider value={useProcessContextState()}>{children}</Provider>
 );
 
 export const ProcessConsumer = Consumer;
