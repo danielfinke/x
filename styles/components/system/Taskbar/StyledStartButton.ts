@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const StyledStartButton = styled.button`
-  background-color: #f00; /* red */
-  width: 30px;
+  /* red */
+  background-color: #f00;
+  width: ${({ theme }) => theme.sizes.startButton.width};
 `;
 
 export default StyledStartButton;

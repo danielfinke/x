@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 const StyledClock = styled.time`
+  align-items: center;
+  display: flex;
   flex-shrink: 0;
-  margin: auto 10px;
+  justify-content: center;
+  width: ${({ theme }) => theme.sizes.clock.width};
 `;
 
 export default StyledClock;

@@ -9,6 +9,17 @@ declare module 'styled-components' {
       primary: string;
       window: string;
     };
+    sizes: {
+      clock: {
+        width: string;
+      };
+      startButton: {
+        width: string;
+      };
+      taskbar: {
+        height: string;
+      };
+    };
     wallpaper?: WallpaperEffect;
   }
 }

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const StyledTaskbar = styled.nav`
-  background-color: #ffa500; /* orange */
+  /* orange */
+  background-color: #ffa500;
   bottom: 0;
   display: flex;
-  height: 30px;
+  height: ${({ theme }) => theme.sizes.taskbar.height};
   position: fixed;
   width: 100%;
 `;
