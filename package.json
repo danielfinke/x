@@ -25,6 +25,8 @@
     "*.tsx": "stylelint --fix"
   },
   "dependencies": {
+    "@types/react": "^17.0.8",
+    "@types/styled-components": "^5.1.9",
     "next": "^10.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -37,8 +39,6 @@
     "@testing-library/react": "^11.2.7",
     "@types/jest": "^26.0.23",
     "@types/node": "^14.17.1",
-    "@types/react": "^17.0.8",
-    "@types/styled-components": "^5.1.9",
     "@types/three": "~0.125.0",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
