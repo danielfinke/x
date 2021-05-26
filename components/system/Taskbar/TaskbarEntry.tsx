@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import StyledTaskbarEntry from 'styles/components/system/StyledTaskbarEntry';
+import StyledTaskbarEntry from 'styles/components/system/Taskbar/StyledTaskbarEntry';
 
 const TaskbarEntry: FC = () => <StyledTaskbarEntry>PROCESS</StyledTaskbarEntry>;
 

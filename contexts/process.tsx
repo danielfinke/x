@@ -1,5 +1,5 @@
-import contextFactory from 'contexts/contextFactory';
 import useProcessContextState from 'hooks/useProcessContextState';
+import contextFactory from 'utils/contextFactory';
 import { initialProcessContextState } from 'utils/initialContextStates';
 
 const { Consumer, Provider } = contextFactory(

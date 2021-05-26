@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { useEffect, useState } from 'react';
-import StyledClock from 'styles/components/system/StyledClock';
+import StyledClock from 'styles/components/system/Taskbar/StyledClock';
 
 const Clock: FC = () => {
   const [time, setTime] = useState(new Date());
