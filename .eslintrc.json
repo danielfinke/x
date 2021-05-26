@@ -16,9 +16,7 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:testing-library/recommended",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    "plugin:prettier/recommended"
   ],
   "globals": {
     "React": "readonly"
@@ -44,7 +42,6 @@
       "error",
       { "prefer": "type-imports" }
     ],
-    "comma-dangle": ["error", "never"],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -54,10 +51,10 @@
       }
     ],
     "max-lines": ["error", 80],
+    "react/jsx-curly-newline": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
-    "semi": ["error", "always"],
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": [
       "error",
