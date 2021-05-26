@@ -1,7 +1,5 @@
 import type { FC } from 'react';
 
-import Title from 'styles/generic/Title';
-
-const HelloWorld: FC = () => <Title>Hello, world!</Title>;
+const HelloWorld: FC = () => <h1>Hello, world!</h1>;
 
 export default HelloWorld;
