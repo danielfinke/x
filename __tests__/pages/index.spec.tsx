@@ -3,6 +3,8 @@ import StyledApp from 'components/pages/StyledApp';
 import { SessionProvider } from 'contexts/session';
 import Index from 'pages/index';
 
+jest.mock('styles/themes');
+
 type ExtraRenderParams = Parameters<typeof render>;
 /**
  * Wrap testing library `render` to always render the app using the default styling

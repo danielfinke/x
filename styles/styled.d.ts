@@ -1,3 +1,5 @@
+import type { WallpaperEffect } from 'types/styles/wallpaper';
+
 import 'styled-components';
 
 declare module 'styled-components' {
@@ -7,5 +9,6 @@ declare module 'styled-components' {
       primary: string;
       window: string;
     };
+    wallpaper?: WallpaperEffect;
   }
 }
