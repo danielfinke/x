@@ -4,7 +4,7 @@ import vantaWaves from 'utils/vantaWaves';
 
 const defaultTheme = {
   colors: {
-    backgroundColor: '#000',
+    background: '#000',
     primary: '#000',
     window: '#808080'
   },
