@@ -16,10 +16,10 @@ const isWebGLAvailable = typeof WebGLRenderingContext !== 'undefined';
 
 const vantaWaves =
   (settings: VantaWavesSettings): WallpaperEffect =>
-  (desktopRef) => {
+  (element) => {
     const vantaEffect = isWebGLAvailable
       ? WAVES({
-          el: desktopRef.current,
+          el: element,
           THREE,
           ...disableControls,
           ...settings
