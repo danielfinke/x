@@ -12,17 +12,21 @@ const disableControls = {
   touchControls: false
 };
 
-const vantaWaves = (settings: VantaWavesSettings): WallpaperEffect => (
-  desktopRef
-) => {
-  const vantaEffect = WAVES({
-    el: desktopRef.current,
-    THREE,
-    ...disableControls,
-    ...settings
-  });
+const isWebGLAvailable = typeof WebGLRenderingContext !== 'undefined';
 
-  return () => vantaEffect?.destroy();
-};
+const vantaWaves =
+  (settings: VantaWavesSettings): WallpaperEffect =>
+  (desktopRef) => {
+    const vantaEffect = isWebGLAvailable
+      ? WAVES({
+          el: desktopRef.current,
+          THREE,
+          ...disableControls,
+          ...settings
+        })
+      : null;
+
+    return () => vantaEffect?.destroy();
+  };
 
 export default vantaWaves;
