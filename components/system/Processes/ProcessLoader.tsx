@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import RenderProcess from 'components/system/RenderProcess';
+import RenderProcess from 'components/system/Processes/RenderProcess';
 import { ProcessConsumer } from 'contexts/process';
 
 const ProcessLoader: FC = () => (
