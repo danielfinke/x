@@ -8,7 +8,7 @@ const StyledDesktop = styled.main`
   position: fixed;
   right: 0;
   top: 0;
-  width: 100vh;
+  width: 100vw;
 `;
 
 export default StyledDesktop;
