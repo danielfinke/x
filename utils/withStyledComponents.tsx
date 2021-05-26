@@ -3,7 +3,7 @@ import type { DocumentContext, DocumentInitialProps } from 'next/document';
 import Document from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-const withServerStyleSheet = async (
+const withStyledComponents = async (
   ctx: DocumentContext
 ): Promise<DocumentInitialProps> => {
   const originalRenderPage = ctx.renderPage;
@@ -31,4 +31,4 @@ const withServerStyleSheet = async (
   }
 };
 
-export default withServerStyleSheet;
+export default withStyledComponents;
