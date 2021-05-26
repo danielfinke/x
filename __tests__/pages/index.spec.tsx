@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 import StyledApp from 'components/pages/StyledApp';
 import { SessionProvider } from 'contexts/session';
 import Index from 'pages/index';
-import themes from 'styles/themes.json';
 
 type ExtraRenderParams = Parameters<typeof render>;
 /**
@@ -14,7 +13,7 @@ type ExtraRenderParams = Parameters<typeof render>;
 const renderStyled = (...[children, ...args]: ExtraRenderParams) =>
   render(
     <SessionProvider>
-      <StyledApp currentTheme={themes.default}>{children}</StyledApp>
+      <StyledApp>{children}</StyledApp>
     </SessionProvider>,
     ...args
   );
