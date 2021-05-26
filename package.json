@@ -13,7 +13,7 @@
     "build": "next build",
     "start": "next start",
     "eslint": "eslint .",
-    "stylelint": "stylelint --fix **/*.tsx",
+    "stylelint": "stylelint --fix '**/*{.ts,.tsx}'",
     "prettier": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watch",
