@@ -1,6 +1,7 @@
+import type { ProcessContextState } from 'types/contexts/process';
 import type { SessionContextState } from 'types/contexts/session';
 
-export const initialProcessContextState = {
+export const initialProcessContextState: ProcessContextState = {
   processes: {}
 };
 
