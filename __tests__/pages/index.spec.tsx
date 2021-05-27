@@ -1,9 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import StyledApp from 'components/pages/StyledApp';
 import { SessionProvider } from 'contexts/session';
+import * as Router from 'next/router';
 import Index from 'pages/index';
 
 jest.mock('styles/themes');
+
+const useRouterSpy = jest.spyOn(Router, 'useRouter') as jest.SpyInstance<
+  Record<string, unknown>,
+  []
+>;
+useRouterSpy.mockReturnValue({});
 
 type ExtraRenderParams = Parameters<typeof render>;
 /**
