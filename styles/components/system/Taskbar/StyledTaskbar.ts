@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const StyledTaskbar = styled.nav`
-  /* purple */
-  background-color: #800080;
+  background-color: ${({ theme }) => theme.colors.taskbar};
   bottom: 0;
   display: flex;
   height: ${({ theme }) => theme.sizes.taskbar.height};
