@@ -6,14 +6,12 @@ import StyledApp from 'components/pages/StyledApp';
 import { SessionProvider } from 'contexts/session';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => (
-  <>
-    <Metadata />
-    <SessionProvider>
-      <StyledApp>
-        <Component {...pageProps} />
-      </StyledApp>
-    </SessionProvider>
-  </>
+  <SessionProvider>
+    <StyledApp>
+      <Metadata />
+      <Component {...pageProps} />
+    </StyledApp>
+  </SessionProvider>
 );
 
 export default App;
