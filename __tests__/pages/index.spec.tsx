@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import StyledApp from 'components/pages/StyledApp';
 import { SessionProvider } from 'contexts/session';
 import Index from 'pages/index';
@@ -21,7 +21,13 @@ const renderStyled = (...[children, ...args]: ExtraRenderParams) =>
   );
 
 test('renders index page', () => {
-  const { getByText } = renderStyled(<Index />);
+  renderStyled(<Index />);
 
-  expect(getByText('Hello, world!')).toBeInTheDocument();
+  expect(screen.getByText('Hello, world!')).toBeInTheDocument();
+});
+
+test('renders main role', () => {
+  renderStyled(<Index />);
+
+  expect(screen.getByRole('main')).toBeInTheDocument();
 });
