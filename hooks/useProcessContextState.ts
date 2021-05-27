@@ -1,10 +1,10 @@
-import type { ProcessContextState } from 'types/contexts/process';
+import type { ProcessContextState, Processes } from 'types/contexts/process';
 
 import { useState } from 'react';
 import { HelloWorld, Taskbar } from 'utils/processDirectory';
 
 const useProcessContextState = (): ProcessContextState => {
-  const [processes] = useState({ HelloWorld, Taskbar });
+  const [processes] = useState<Processes>({ HelloWorld, Taskbar });
 
   return { processes };
 };
