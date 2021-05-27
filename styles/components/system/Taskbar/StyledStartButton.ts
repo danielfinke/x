@@ -4,9 +4,12 @@ const StyledStartButton = styled.button.attrs({
   title: 'Start',
   type: 'button'
 })`
-  /* red */
-  background-color: #f00;
+  align-items: center;
+  color: #fff;
+  display: flex;
   flex-shrink: 0;
+  font-size: ${({ theme }) => theme.sizes.startButton.iconSize};
+  justify-content: center;
   width: ${({ theme }) => theme.sizes.startButton.width};
 `;
 

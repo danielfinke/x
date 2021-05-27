@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     overscroll-behavior: none;
   }
 
+  button {
+    background-color: unset;
+  }
+
   ol,
   ul {
     list-style: none;

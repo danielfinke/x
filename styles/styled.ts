@@ -10,16 +10,13 @@ declare module 'styled-components' {
       taskbar: string;
       window: string;
     };
-    fonts: {
-      clock: {
-        size: string;
-      };
-    };
     sizes: {
       clock: {
+        fontSize: string;
         width: string;
       };
       startButton: {
+        iconSize: string;
         width: string;
       };
       taskbar: {
