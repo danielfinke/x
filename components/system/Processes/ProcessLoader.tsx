@@ -1,16 +1,17 @@
 import type { FC } from 'react';
-import type { Process } from 'types/contexts/process';
+import type { Processes } from 'types/contexts/process';
 
 import RenderProcess from 'components/system/Processes/RenderProcess';
 import { ProcessConsumer } from 'contexts/process';
 
-const renderProcess = ([id, process]: [string, Process]) => (
-  <RenderProcess key={id} {...process} />
-);
+const renderProcesses = (processes: Processes) =>
+  Object.entries(processes).map(([id, process]) => (
+    <RenderProcess key={id} {...process} />
+  ));
 
 const ProcessLoader: FC = () => (
   <ProcessConsumer>
-    {({ processes }) => Object.entries(processes).map(renderProcess)}
+    {({ processes }) => renderProcesses(processes)}
   </ProcessConsumer>
 );
 
