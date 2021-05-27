@@ -3,15 +3,18 @@ import type { FC } from 'react';
 
 import Metadata from 'components/pages/Metadata';
 import StyledApp from 'components/pages/StyledApp';
+import { FileSystemProvider } from 'contexts/fileSystem';
 import { SessionProvider } from 'contexts/session';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => (
-  <SessionProvider>
-    <StyledApp>
-      <Metadata />
-      <Component {...pageProps} />
-    </StyledApp>
-  </SessionProvider>
+  <FileSystemProvider>
+    <SessionProvider>
+      <StyledApp>
+        <Metadata />
+        <Component {...pageProps} />
+      </StyledApp>
+    </SessionProvider>
+  </FileSystemProvider>
 );
 
 export default App;
