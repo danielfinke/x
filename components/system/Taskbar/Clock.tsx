@@ -12,7 +12,11 @@ const Clock: FC = () => {
   //   return () => clearTimeout(timer);
   // }, []);
 
-  return <StyledClock>{time.toLocaleTimeString()}</StyledClock>;
+  return (
+    <StyledClock dateTime={time.toISOString()}>
+      {time.toLocaleTimeString()}
+    </StyledClock>
+  );
 };
 
 export default Clock;
