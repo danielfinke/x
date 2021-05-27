@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 const StyledClock = styled.time`
   align-items: center;
-  background-color: #00f;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.clockText};
   display: flex;
   flex-shrink: 0;
   font-size: ${({ theme }) => theme.sizes.clock.fontSize};

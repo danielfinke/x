@@ -6,6 +6,7 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
       background: string;
+      clockText: string;
       primary: string;
       taskbar: string;
       window: string;
