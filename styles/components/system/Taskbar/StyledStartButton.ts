@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-const StyledStartButton = styled.button`
+const StyledStartButton = styled.button.attrs({
+  title: 'Start',
+  type: 'button'
+})`
   /* red */
   background-color: #f00;
   flex-shrink: 0;
