@@ -1,15 +1,15 @@
-import type { ReactElement } from 'react';
+import type { FC } from 'react';
 
 import Desktop from 'components/system/Desktop';
 import ProcessLoader from 'components/system/Processes/ProcessLoader';
 import { ProcessProvider } from 'contexts/process';
 
-export default function Home(): ReactElement {
-  return (
-    <Desktop>
-      <ProcessProvider>
-        <ProcessLoader />
-      </ProcessProvider>
-    </Desktop>
-  );
-}
+const Home: FC = () => (
+  <Desktop>
+    <ProcessProvider>
+      <ProcessLoader />
+    </ProcessProvider>
+  </Desktop>
+);
+
+export default Home;
