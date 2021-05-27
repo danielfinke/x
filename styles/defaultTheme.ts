@@ -6,15 +6,21 @@ const colors = {
   window: '#808080'
 };
 
+const fonts = {
+  clock: {
+    size: '12px'
+  }
+};
+
 const sizes = {
   clock: {
-    width: '90px'
+    width: '76px'
   },
   startButton: {
-    width: '30px'
+    width: '36px'
   },
   taskbar: {
-    height: '30px'
+    height: '36px'
   }
 };
 
@@ -26,6 +32,6 @@ const wallpaper = vantaWaves({
   zoom: 0.9
 });
 
-const defaultTheme = { colors, sizes, wallpaper };
+const defaultTheme = { colors, fonts, sizes, wallpaper };
 
 export default defaultTheme;

@@ -6,6 +6,7 @@ const StyledClock = styled.time`
   color: #fff;
   display: flex;
   flex-shrink: 0;
+  font-size: ${({ theme }) => theme.fonts.clock.size};
   justify-content: center;
   margin-left: auto;
   width: ${({ theme }) => theme.sizes.clock.width};
