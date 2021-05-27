@@ -19,7 +19,7 @@ const sizes = {
 };
 
 const wallpaper = vantaWaves({
-  color: 0x5588,
+  color: 0x274c,
   shininess: 35,
   waveHeight: 15,
   waveSpeed: 0.3,
