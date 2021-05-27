@@ -2,18 +2,32 @@ import type { FC } from 'react';
 
 import styled from 'styled-components';
 
+const StyledTaskbarEntryListItem = styled.li`
+  flex-grow: 1;
+  max-width: 150px;
+
+  /* Allow shrinking past min-content */
+  min-width: 0;
+`;
+
 const StyledTaskbarEntryButton = styled.button`
   background-color: #add8e6; /* lightblue */
   border: 2px solid #fff;
   border-radius: 5px;
   height: 100%;
-  padding: 0 10px;
+  overflow: hidden;
+  padding: 0 5px;
+  text-align: start;
+  text-overflow: ellipsis;
+
+  /* Force shrink down to width of parent */
+  width: 100%;
 `;
 
 const StyledTaskbarEntry: FC = ({ children }) => (
-  <li>
+  <StyledTaskbarEntryListItem>
     <StyledTaskbarEntryButton>{children}</StyledTaskbarEntryButton>
-  </li>
+  </StyledTaskbarEntryListItem>
 );
 
 export default StyledTaskbarEntry;
