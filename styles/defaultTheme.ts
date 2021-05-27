@@ -2,6 +2,11 @@ import type { DefaultTheme } from 'styled-components';
 
 import vantaWaves from 'utils/vantaWaves';
 
+type Formats = {
+  date: Intl.DateTimeFormatOptions;
+  time: Intl.DateTimeFormatOptions;
+};
+
 const colors = {
   background: '#000',
   clockText: 'rgba(255, 255, 255, 80%)',
@@ -9,6 +14,21 @@ const colors = {
   taskbar: 'rgba(0, 0, 0, 60%)',
   primary: '#000',
   window: '#808080'
+};
+
+const formats: Formats = {
+  date: {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  },
+  time: {
+    hour: 'numeric',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  }
 };
 
 const sizes = {
@@ -37,6 +57,6 @@ const wallpaper = vantaWaves({
   zoom: 0.9
 });
 
-const defaultTheme: DefaultTheme = { colors, sizes, wallpaper };
+const defaultTheme: DefaultTheme = { colors, formats, sizes, wallpaper };
 
 export default defaultTheme;
