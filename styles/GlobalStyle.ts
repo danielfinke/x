@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+  body {
+    overscroll-behavior: none;
+  }
+
   ol,
   ul {
     list-style: none;
