@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const StyledTaskbarEntryListItem = styled.li`
   flex-grow: 1;
-  max-width: 150px;
+  max-width: ${({ theme }) => theme.sizes.taskbar.entry.maxWidth};
 
   /* Allow shrinking past min-content */
   min-width: 0;

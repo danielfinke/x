@@ -20,6 +20,9 @@ const sizes = {
     width: '36px'
   },
   taskbar: {
+    entry: {
+      maxWidth: '161px'
+    },
     height: '36px'
   }
 };

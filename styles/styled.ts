@@ -22,6 +22,9 @@ declare module 'styled-components' {
         width: string;
       };
       taskbar: {
+        entry: {
+          maxWidth: string;
+        };
         height: string;
       };
     };
