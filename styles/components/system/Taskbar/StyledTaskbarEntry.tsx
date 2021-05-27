@@ -26,7 +26,9 @@ const StyledTaskbarEntryButton = styled.button`
 
 const StyledTaskbarEntry: FC = ({ children }) => (
   <StyledTaskbarEntryListItem>
-    <StyledTaskbarEntryButton>{children}</StyledTaskbarEntryButton>
+    <StyledTaskbarEntryButton type="button">
+      {children}
+    </StyledTaskbarEntryButton>
   </StyledTaskbarEntryListItem>
 );
 
