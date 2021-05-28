@@ -1,5 +1,5 @@
 import type { DefaultTheme } from 'styled-components';
-import type { Themes } from 'types/styles/themes';
+import type { Themes } from 'styles/themes';
 
 const themes: Themes = jest.requireActual('../../styles/themes').default;
 
