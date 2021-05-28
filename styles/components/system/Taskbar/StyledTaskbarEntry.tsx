@@ -11,9 +11,9 @@ const StyledTaskbarEntryListItem = styled.li`
 `;
 
 const StyledTaskbarEntryButton = styled.button`
-  background-color: #add8e6; /* lightblue */
-  border: 2px solid #fff;
-  border-radius: 5px;
+  border-bottom: ${({ theme }) => `
+    ${theme.sizes.taskbar.entry.borderSize} solid ${theme.colors.highlight}
+  `};
   height: 100%;
   overflow: hidden;
   padding: 0 5px;
@@ -22,6 +22,22 @@ const StyledTaskbarEntryButton = styled.button`
 
   /* Force shrink down to width of parent */
   width: 100%;
+
+  figure {
+    align-items: center;
+    display: flex;
+    font-size: ${({ theme }) => theme.sizes.taskbar.entry.fontSize};
+
+    figcaption {
+      color: ${({ theme }) => theme.colors.taskbar.entry.text};
+    }
+
+    img {
+      height: ${({ theme }) => theme.sizes.taskbar.entry.icon.size};
+      margin-right: ${({ theme }) => theme.sizes.taskbar.entry.icon.margin};
+      width: ${({ theme }) => theme.sizes.taskbar.entry.icon.size};
+    }
+  }
 `;
 
 const StyledTaskbarEntry: FC = ({ children }) => (

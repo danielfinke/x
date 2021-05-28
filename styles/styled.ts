@@ -7,8 +7,14 @@ declare module 'styled-components' {
     colors: {
       background: string;
       clockText: string;
+      highlight: string;
       primary: string;
-      taskbar: string;
+      taskbar: {
+        background: string;
+        entry: {
+          text: string;
+        };
+      };
       window: string;
     };
     formats: {
@@ -27,6 +33,12 @@ declare module 'styled-components' {
       taskbar: {
         blur: string;
         entry: {
+          borderSize: string;
+          fontSize: string;
+          icon: {
+            margin: string;
+            size: string;
+          };
           maxWidth: string;
         };
         height: string;

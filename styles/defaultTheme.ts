@@ -7,11 +7,19 @@ type Formats = {
   time: Intl.DateTimeFormatOptions;
 };
 
+const OPAQUE_WHITE = 'rgba(255, 255, 255, 80%)';
+
 const colors = {
   background: '#000',
-  clockText: 'rgba(255, 255, 255, 80%)',
+  clockText: OPAQUE_WHITE,
+  highlight: '#76b9ed',
   startButton: '#fff',
-  taskbar: 'rgba(0, 0, 0, 60%)',
+  taskbar: {
+    background: 'rgba(0, 0, 0, 60%)',
+    entry: {
+      text: OPAQUE_WHITE
+    }
+  },
   primary: '#000',
   window: '#808080'
 };
@@ -43,6 +51,12 @@ const sizes = {
   taskbar: {
     blur: '5px',
     entry: {
+      borderSize: '2px',
+      fontSize: '12px',
+      icon: {
+        margin: '5px',
+        size: '16px'
+      },
       maxWidth: '161px'
     },
     height: '36px'
