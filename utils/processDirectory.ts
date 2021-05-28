@@ -1,11 +1,14 @@
-import type { Process } from 'types/contexts/process';
+import type { Processes } from 'types/contexts/process';
 
 import dynamic from 'next/dynamic';
 
-// eslint-disable-next-line import/prefer-default-export
-export const HelloWorld: Process = {
-  Component: dynamic(() => import('components/apps/HelloWorld')),
-  hasWindow: true,
-  icon: '/favicon.ico',
-  title: 'Hello World'
+const processDirectory: Processes = {
+  HelloWorld: {
+    Component: dynamic(() => import('components/apps/HelloWorld')),
+    hasWindow: true,
+    icon: '/favicon.ico',
+    title: 'Hello World'
+  }
 };
+
+export default processDirectory;
