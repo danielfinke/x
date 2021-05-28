@@ -5,6 +5,7 @@ import * as Router from 'next/router';
 import Index from 'pages/index';
 
 jest.mock('styles/themes');
+jest.mock('utils/initialContextStates');
 
 const useRouterSpy = jest.spyOn(Router, 'useRouter') as jest.SpyInstance<
   Record<string, unknown>,

@@ -1,10 +1,13 @@
 import type { ProcessContextState, Processes } from 'types/contexts/process';
 
 import { useState } from 'react';
+import { initialProcessContextState } from 'utils/initialContextStates';
 import { closeProcess, openProcess } from 'utils/processFunctions';
 
 const useProcessContextState = (): ProcessContextState => {
-  const [processes, setProcesses] = useState<Processes>({});
+  const [processes, setProcesses] = useState<Processes>(
+    initialProcessContextState.processes
+  );
   const close = (id: string) => setProcesses(closeProcess(id));
   const open = (id: string) => setProcesses(openProcess(id));
 
