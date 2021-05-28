@@ -9,7 +9,7 @@ const Home: FC = () => (
   <Desktop>
     <ProcessProvider>
       <Taskbar />
-      {/* <ProcessLoader /> */}
+      <ProcessLoader />
     </ProcessProvider>
   </Desktop>
 );
