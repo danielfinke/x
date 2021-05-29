@@ -15,10 +15,8 @@ const StyledTaskbarEntryButton = styled.button`
     ${theme.sizes.taskbar.entry.borderSize} solid ${theme.colors.highlight}
   `};
   height: 100%;
-  overflow: hidden;
   padding: 0 5px;
   text-align: start;
-  text-overflow: ellipsis;
 
   /* Force shrink down to width of parent */
   width: 100%;
@@ -30,6 +28,9 @@ const StyledTaskbarEntryButton = styled.button`
 
     figcaption {
       color: ${({ theme }) => theme.colors.taskbar.entry.text};
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     img {
