@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import styled from 'styled-components';
+import Button from 'styles/common/Button';
 
 const StyledTaskbarEntryListItem = styled.li`
   flex-grow: 1;
@@ -10,7 +11,7 @@ const StyledTaskbarEntryListItem = styled.li`
   min-width: 0;
 `;
 
-const StyledTaskbarEntryButton = styled.button`
+const StyledTaskbarEntryButton = styled(Button)`
   border-bottom: ${({ theme }) => `
     ${theme.sizes.taskbar.entry.borderSize} solid ${theme.colors.highlight}
   `};
