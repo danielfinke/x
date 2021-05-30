@@ -27,7 +27,7 @@ const StyledTaskbarEntryButton = styled.button`
     font-size: ${({ theme }) => theme.sizes.taskbar.entry.fontSize};
 
     figcaption {
-      color: ${({ theme }) => theme.colors.taskbar.entry.text};
+      color: ${({ theme }) => theme.colors.text};
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

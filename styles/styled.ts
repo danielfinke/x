@@ -6,17 +6,13 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
       background: string;
-      clockText: string;
       highlight: string;
-      primary: string;
       startButton: string;
       taskbar: {
         background: string;
-        entry: {
-          text: string;
-        };
         hover: string;
       };
+      text: string;
       window: string;
     };
     formats: {

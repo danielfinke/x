@@ -11,17 +11,13 @@ const OPAQUE_WHITE = 'rgba(255, 255, 255, 80%)';
 
 const colors = {
   background: '#000',
-  clockText: OPAQUE_WHITE,
   highlight: '#76b9ed',
   startButton: '#fff',
   taskbar: {
     background: 'rgba(0, 0, 0, 60%)',
-    entry: {
-      text: OPAQUE_WHITE
-    },
     hover: 'hsla(0, 0%, 25%, 70%)'
   },
-  primary: '#000',
+  text: OPAQUE_WHITE,
   window: '#808080'
 };
 
