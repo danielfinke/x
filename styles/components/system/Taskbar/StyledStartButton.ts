@@ -3,18 +3,21 @@ import Button from 'styles/common/Button';
 
 const StyledStartButton = styled(Button)`
   align-items: center;
-  color: #fff;
   display: flex;
+  fill: ${({ theme }) => theme.colors.startButton};
   flex-shrink: 0;
-  font-size: ${({ theme }) => theme.sizes.startButton.iconSize};
   justify-content: center;
   width: ${({ theme }) => theme.sizes.startButton.width};
+
+  svg {
+    height: ${({ theme }) => theme.sizes.startButton.iconSize};
+  }
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.taskbar.hover};
 
     svg {
-      color: ${({ theme }) => theme.colors.highlight};
+      fill: ${({ theme }) => theme.colors.highlight};
     }
   }
 `;

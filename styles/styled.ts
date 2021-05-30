@@ -9,6 +9,7 @@ declare module 'styled-components' {
       clockText: string;
       highlight: string;
       primary: string;
+      startButton: string;
       taskbar: {
         background: string;
         entry: {
