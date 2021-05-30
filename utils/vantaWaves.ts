@@ -1,4 +1,4 @@
-import type { WallpaperEffect } from 'types/styles/wallpaper';
+import type { WallpaperEffect } from 'styles/styled';
 
 import * as THREE from 'three';
 /* @ts-expect-error Vanta has no declaration file */
