@@ -12,10 +12,12 @@ const withWindow = (Component: ComponentType) => (
 
 type RenderProcessProps = {
   Component: ComponentType;
-  hasWindow: boolean;
+  hasWindow?: boolean;
 };
 
-const RenderProcess: FC<RenderProcessProps> = ({ Component, hasWindow }) =>
-  hasWindow ? withWindow(Component) : <Component />;
+const RenderProcess: FC<RenderProcessProps> = ({
+  Component,
+  hasWindow = false
+}) => (hasWindow ? withWindow(Component) : <Component />);
 
 export default RenderProcess;
