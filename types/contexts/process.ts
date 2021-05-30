@@ -7,6 +7,10 @@ export type Process = {
   title: string;
 };
 
+export type ProcessMap = (
+  callback: ([id, process]: [string, Process]) => JSX.Element
+) => JSX.Element[];
+
 export type Processes = {
   [id: string]: Process;
 };
@@ -14,5 +18,5 @@ export type Processes = {
 export type ProcessContextState = {
   close: (id: string) => void;
   open: (id: string) => void;
-  processes: Processes;
+  mapProcesses: ProcessMap;
 };

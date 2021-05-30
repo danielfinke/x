@@ -7,12 +7,10 @@ import StyledTaskbarEntries from 'styles/components/system/Taskbar/StyledTaskbar
 const TaskbarEntries: FC = () => (
   <StyledTaskbarEntries>
     <ProcessConsumer>
-      {({ processes }) =>
-        Object.entries(processes)
-          .filter(([, { hasWindow }]) => hasWindow)
-          .map(([id, { icon, title }]) => (
-            <TaskbarEntry key={id} icon={icon} title={title} />
-          ))
+      {({ mapProcesses }) =>
+        mapProcesses(([id, { icon, title }]) => (
+          <TaskbarEntry key={id} icon={icon} title={title} />
+        ))
       }
     </ProcessConsumer>
   </StyledTaskbarEntries>
