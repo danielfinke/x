@@ -6,6 +6,8 @@ export type Process = {
   Component: ComponentType;
   hasWindow?: boolean;
   icon: string;
+  maximize?: boolean;
+  minimize?: boolean;
   title: string;
 };
 
