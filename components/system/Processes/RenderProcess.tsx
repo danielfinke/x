@@ -1,5 +1,4 @@
 import type { ComponentType, FC } from 'react';
-import type { Process } from 'types/contexts/process';
 
 import dynamic from 'next/dynamic';
 
@@ -11,7 +10,12 @@ const withWindow = (Component: ComponentType) => (
   </Window>
 );
 
-const RenderProcess: FC<Process> = ({ Component, hasWindow }) =>
+type RenderProcessProps = {
+  Component: ComponentType;
+  hasWindow: boolean;
+};
+
+const RenderProcess: FC<RenderProcessProps> = ({ Component, hasWindow }) =>
   hasWindow ? withWindow(Component) : <Component />;
 
 export default RenderProcess;
