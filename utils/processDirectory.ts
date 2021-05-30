@@ -1,13 +1,14 @@
+import type { ProcessComponentProps } from 'components/system/Processes/RenderProcess';
 import type { ComponentType } from 'react';
 
 import dynamic from 'next/dynamic';
 
 export type Process = {
-  Component: ComponentType;
+  Component: ComponentType<ProcessComponentProps>;
   hasWindow?: boolean;
   icon: string;
-  maximize?: boolean;
-  minimize?: boolean;
+  maximized?: boolean;
+  minimized?: boolean;
   title: string;
 };
 
@@ -17,7 +18,9 @@ export type Processes = {
 
 const processDirectory: Processes = {
   HelloWorld: {
-    Component: dynamic(() => import('components/apps/HelloWorld')),
+    Component: dynamic<ProcessComponentProps>(
+      () => import('components/apps/HelloWorld')
+    ),
     hasWindow: true,
     icon: '/favicon.ico',
     title: 'Hello World'
