@@ -2,7 +2,7 @@ import type { ProcessComponentProps } from 'components/system/Processes/RenderPr
 import type { FC } from 'react';
 
 import { useProcesses } from 'contexts/process';
-import StyledWindow from 'styles/components/system/StyledWindow';
+import StyledWindow from 'styles/components/system/Window/StyledWindow';
 
 const Window: FC<ProcessComponentProps> = ({ children, id }) => {
   const {
