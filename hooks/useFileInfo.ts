@@ -18,7 +18,7 @@ const useFileInfo = (path: string): FileInfo => {
     if (fs) {
       const extension = extname(path);
 
-      if (extension === 'url') {
+      if (extension === '.url') {
         getShortcut(path, fs).then(({ URL, IconFile }) => {
           setIcon(IconFile);
           setPid(URL);
