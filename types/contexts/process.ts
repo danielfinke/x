@@ -12,11 +12,11 @@ export type ProcessesMap = (
 ) => JSX.Element[];
 
 export type Processes = {
-  [pid: string]: Process;
+  [processId: string]: Process;
 };
 
 export type ProcessContextState = {
-  close: (pid: string) => void;
-  open: (pid: string) => void;
+  close: (processId: string) => void;
+  open: (processId: string) => void;
   mapProcesses: ProcessesMap;
 };

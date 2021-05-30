@@ -13,8 +13,8 @@ const useProcessContextState = (): ProcessContextState => {
     (callback) => Object.entries(processes).map(callback),
     [processes]
   );
-  const close = (pid: string) => setProcesses(closeProcess(pid));
-  const open = (pid: string) => setProcesses(openProcess(pid));
+  const close = (processId: string) => setProcesses(closeProcess(processId));
+  const open = (processId: string) => setProcesses(openProcess(processId));
 
   return { close, open, mapProcesses };
 };
