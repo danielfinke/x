@@ -1,10 +1,10 @@
 import type { RefObject } from 'react';
 
-import { useContext, useEffect } from 'react';
-import { ThemeContext } from 'styled-components';
+import { useEffect } from 'react';
+import { useTheme } from 'styled-components';
 
 const useWallpaper = (desktopRef: RefObject<HTMLElement>): void => {
-  const { wallpaper } = useContext(ThemeContext);
+  const { wallpaper } = useTheme();
 
   useEffect(() => wallpaper?.(desktopRef.current), [desktopRef, wallpaper]);
 };
