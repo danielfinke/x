@@ -1,5 +1,7 @@
+*.url
 /.husky
 /.next
 /.prettierignore
 /node_modules
 /out
+/public.json
