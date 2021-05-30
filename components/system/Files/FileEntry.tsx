@@ -17,7 +17,12 @@ const FileEntry: FC<FileEntryProps> = ({ name, path }) => {
 
   return (
     <StyledFileEntry>
-      <button type="button" onClick={onActivate} onKeyDown={onActivate}>
+      <button
+        title={name}
+        type="button"
+        onClick={onActivate}
+        onKeyDown={onActivate}
+      >
         <figure>
           <img src={icon} alt={name} />
           <figcaption>{name}</figcaption>
