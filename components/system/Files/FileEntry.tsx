@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { useProcesses } from 'contexts/process';
 import useFileInfo from 'hooks/useFileInfo';
 import { useCallback } from 'react';
+import Button from 'styles/common/Button';
 import StyledFileEntry from 'styles/components/system/Files/StyledFileEntry';
 
 type FileEntryProps = {
@@ -17,17 +18,12 @@ const FileEntry: FC<FileEntryProps> = ({ name, path }) => {
 
   return (
     <StyledFileEntry>
-      <button
-        title={name}
-        type="button"
-        onClick={onActivate}
-        onKeyDown={onActivate}
-      >
+      <Button title={name} onClick={onActivate} onKeyDown={onActivate}>
         <figure>
           <img src={icon} alt={name} />
           <figcaption>{name}</figcaption>
         </figure>
-      </button>
+      </Button>
     </StyledFileEntry>
   );
 };

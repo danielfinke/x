@@ -1,9 +1,7 @@
 import styled from 'styled-components';
+import Button from 'styles/common/Button';
 
-const StyledStartButton = styled.button.attrs({
-  title: 'Start',
-  type: 'button'
-})`
+const StyledStartButton = styled(Button)`
   align-items: center;
   color: #fff;
   display: flex;
