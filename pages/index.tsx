@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import Desktop from 'components/system/Desktop';
+import FileManager from 'components/system/Files/FileManager';
 import ProcessLoader from 'components/system/Processes/ProcessLoader';
 import Taskbar from 'components/system/Taskbar';
 import { ProcessProvider } from 'contexts/process';
@@ -8,6 +9,7 @@ import { ProcessProvider } from 'contexts/process';
 const Home: FC = () => (
   <Desktop>
     <ProcessProvider>
+      <FileManager directory="/desktop" />
       <Taskbar />
       <ProcessLoader />
     </ProcessProvider>

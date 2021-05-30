@@ -3,19 +3,19 @@ import type { Processes } from 'types/contexts/process';
 import processDirectory from 'utils/processDirectory';
 
 export const closeProcess =
-  (processId: string) =>
+  (pid: string) =>
   (currentProcesses: Processes): Processes => {
     const remainingProcesses = { ...currentProcesses };
-    delete remainingProcesses[processId];
+    delete remainingProcesses[pid];
     return remainingProcesses;
   };
 
 export const openProcess =
-  (processId: string) =>
+  (pid: string) =>
   (currentProcesses: Processes): Processes =>
-    currentProcesses[processId] || !processDirectory[processId]
+    currentProcesses[pid] || !processDirectory[pid]
       ? currentProcesses
       : {
           ...currentProcesses,
-          [processId]: processDirectory[processId]
+          [pid]: processDirectory[pid]
         };
