@@ -18,7 +18,8 @@ const colors = {
     background: 'rgba(0, 0, 0, 60%)',
     entry: {
       text: OPAQUE_WHITE
-    }
+    },
+    hover: 'hsla(0, 0%, 25%, 70%)'
   },
   primary: '#000',
   window: '#808080'

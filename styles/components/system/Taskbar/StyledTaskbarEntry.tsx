@@ -39,6 +39,10 @@ const StyledTaskbarEntryButton = styled.button`
       width: ${({ theme }) => theme.sizes.taskbar.entry.icon.size};
     }
   }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.taskbar.hover};
+  }
 `;
 
 const StyledTaskbarEntry: FC = ({ children }) => (

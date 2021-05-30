@@ -9,6 +9,10 @@ const StyledClock = styled.time`
   justify-content: center;
   margin-left: auto;
   width: ${({ theme }) => theme.sizes.clock.width};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.taskbar.hover};
+  }
 `;
 
 export default StyledClock;

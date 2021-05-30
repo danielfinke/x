@@ -14,6 +14,7 @@ declare module 'styled-components' {
         entry: {
           text: string;
         };
+        hover: string;
       };
       window: string;
     };
