@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import Titlebar from 'components/system/Window/Titlebar';
 import { useProcesses } from 'contexts/process';
-import useResizable from 'hooks/useResizable';
+import useDraggableAndResizable from 'hooks/useDraggableAndResizable';
 import { Rnd } from 'react-rnd';
 import StyledWindow from 'styles/components/system/Window/StyledWindow';
 import rndDefaults from 'utils/rndDefaults';
@@ -15,7 +15,7 @@ const Window: FC<ProcessComponentProps> = ({ children, id }) => {
     }
   } = useProcesses();
   const { height, width, updateSize, x, y, updatePosition } =
-    useResizable(maximized);
+    useDraggableAndResizable(maximized);
 
   return (
     <Rnd

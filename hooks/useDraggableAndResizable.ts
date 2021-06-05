@@ -1,16 +1,11 @@
 import type { DraggableEventHandler } from 'react-draggable';
-import type { RndResizeCallback } from 'react-rnd';
+import type { Position, RndResizeCallback } from 'react-rnd';
 
 import { useCallback, useState } from 'react';
 
 type Size = {
   height: string;
   width: string;
-};
-
-type Position = {
-  x: number;
-  y: number;
 };
 
 type Draggable = Position & {
