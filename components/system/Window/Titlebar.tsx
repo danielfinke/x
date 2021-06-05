@@ -23,14 +23,14 @@ const Titlebar: FC<TitlebarProps> = ({ id }) => {
   const onClose = () => close(id);
 
   return (
-    <StyledTitlebar>
+    <StyledTitlebar className="handle">
       <h1>
         <figure>
-          <img src={icon} alt={title} />
+          <img src={icon} alt={title} draggable={false} />
           <figcaption>{title}</figcaption>
         </figure>
       </h1>
-      <nav>
+      <nav className="cancel">
         <Button onClick={onMinimize}>
           <MinimizeIcon />
         </Button>
