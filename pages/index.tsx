@@ -5,13 +5,16 @@ import FileManager from 'components/system/Files/FileManager';
 import ProcessLoader from 'components/system/Processes/ProcessLoader';
 import Taskbar from 'components/system/Taskbar';
 import { ProcessProvider } from 'contexts/process';
+import StyledDesktopContainer from 'styles/components/system/StyledDesktopContainer';
 
 const Home: FC = () => (
   <Desktop>
     <ProcessProvider>
-      <FileManager directory="/desktop" />
+      <StyledDesktopContainer>
+        <FileManager directory="/desktop" />
+        <ProcessLoader />
+      </StyledDesktopContainer>
       <Taskbar />
-      <ProcessLoader />
     </ProcessProvider>
   </Desktop>
 );
