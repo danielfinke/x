@@ -2,6 +2,7 @@ import type { FC } from 'react';
 
 import { CloseIcon, MaximizeIcon, MinimizeIcon } from 'components/system/Icons';
 import { useProcesses } from 'contexts/process';
+import useWindowActions from 'hooks/useWindowActions';
 import Button from 'styles/common/Button';
 import Image from 'styles/common/Image';
 import StyledTitlebar from 'styles/components/system/Window/StyledTitlebar';
@@ -12,16 +13,11 @@ type TitlebarProps = {
 
 const Titlebar: FC<TitlebarProps> = ({ id }) => {
   const {
-    close,
-    maximize,
-    minimize,
     processes: {
       [id]: { icon, title }
     }
   } = useProcesses();
-  const onMinimize = () => minimize(id);
-  const onMaximize = () => maximize(id);
-  const onClose = () => close(id);
+  const { onClose, onMaximize, onMinimize } = useWindowActions(id);
 
   return (
     <StyledTitlebar className="handle">
