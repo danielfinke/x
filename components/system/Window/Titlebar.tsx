@@ -34,7 +34,7 @@ const Titlebar: FC<TitlebarProps> = ({ id }) => {
         <Button onClick={onMaximize}>
           <MaximizeIcon />
         </Button>
-        <Button onClick={onClose}>
+        <Button className="close" onClick={onClose}>
           <CloseIcon />
         </Button>
       </nav>
