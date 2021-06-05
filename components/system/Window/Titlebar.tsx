@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { CloseIcon, MaximizeIcon, MinimizeIcon } from 'components/system/Icons';
 import { useProcesses } from 'contexts/process';
 import Button from 'styles/common/Button';
+import Image from 'styles/common/Image';
 import StyledTitlebar from 'styles/components/system/Window/StyledTitlebar';
 
 type TitlebarProps = {
@@ -26,7 +27,7 @@ const Titlebar: FC<TitlebarProps> = ({ id }) => {
     <StyledTitlebar className="handle">
       <h1>
         <figure>
-          <img src={icon} alt={title} draggable={false} />
+          <Image src={icon} alt={title} draggable={false} />
           <figcaption>{title}</figcaption>
         </figure>
       </h1>

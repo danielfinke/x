@@ -2,6 +2,7 @@ import type { FC } from 'react';
 
 import TaskbarEntryButton from 'components/system/Taskbar/TaskbarEntryButton';
 import { useProcesses } from 'contexts/process';
+import Image from 'styles/common/Image';
 import StyledTaskbarEntry from 'styles/components/system/Taskbar/StyledTaskbarEntry';
 
 type TaskbarEntryProps = {
@@ -22,7 +23,7 @@ const TaskbarEntry: FC<TaskbarEntryProps> = ({
     <StyledTaskbarEntry>
       <TaskbarEntryButton onClick={onClick}>
         <figure>
-          <img src={icon} alt={title} />
+          <Image src={icon} alt={title} />
           <figcaption>{title}</figcaption>
         </figure>
       </TaskbarEntryButton>
