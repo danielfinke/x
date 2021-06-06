@@ -13,6 +13,12 @@ declare module 'styled-components' {
         hover: string;
       };
       text: string;
+      titleBar: {
+        background: string;
+        backgroundHover: string;
+        closeHover: string;
+        text: string;
+      };
       window: string;
     };
     formats: {
@@ -40,6 +46,14 @@ declare module 'styled-components' {
           maxWidth: string;
         };
         height: string;
+      };
+      titleBar: {
+        buttonIconWidth: string;
+        buttonWidth: string;
+        fontSize: string;
+        height: string;
+        iconMargin: string;
+        iconSize: string;
       };
     };
     wallpaper?: WallpaperEffect;

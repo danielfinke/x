@@ -9,6 +9,12 @@ const colors = {
     hover: 'hsla(0, 0%, 25%, 70%)'
   },
   text: OPAQUE_WHITE,
+  titleBar: {
+    background: '#000',
+    backgroundHover: 'rgb(26, 26, 26)',
+    closeHover: 'rgb(232, 17, 35)',
+    text: '#fff'
+  },
   window: '#808080'
 };
 
