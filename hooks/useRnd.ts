@@ -1,28 +1,19 @@
 import type { DraggableEventHandler } from 'react-draggable';
-import type { Position, Props, RndResizeCallback } from 'react-rnd';
+import type { Props, RndResizeCallback } from 'react-rnd';
 
-import { useCallback, useState } from 'react';
-import { DEFAULT_WINDOW_POSITION, DEFAULT_WINDOW_SIZE } from 'utils/constants';
+import { useCallback } from 'react';
+import rndDefaults from 'utils/rndDefaults';
 
-export type Size = NonNullable<Props['size']>;
+import useDraggable from './useDraggable';
+import useResizable from './useResizable';
 
-type Draggable = Position & {
-  updatePosition: DraggableEventHandler;
-};
-
-type Resizable = Size & {
-  updateSize: RndResizeCallback;
-};
-
-type DraggableAndResizable = Resizable & Draggable;
-
-const useDraggableAndResizable = (maximized = false): DraggableAndResizable => {
-  const [{ height, width }, setSize] = useState<Size>(DEFAULT_WINDOW_SIZE);
-  const [{ x, y }, setPosition] = useState<Position>(DEFAULT_WINDOW_POSITION);
+const useRnd = (maximized = false): Props => {
+  const [size, setSize] = useResizable();
+  const [position, setPosition] = useDraggable();
   const updatePosition = useCallback<DraggableEventHandler>(
     (_event, { x: positionX, y: positionY }) =>
       setPosition({ x: positionX, y: positionY }),
-    []
+    [setPosition]
   );
   const updateSize = useCallback<RndResizeCallback>(
     (
@@ -35,17 +26,18 @@ const useDraggableAndResizable = (maximized = false): DraggableAndResizable => {
       setSize({ height: elementHeight, width: elementWidth });
       setPosition({ x: positionX, y: positionY });
     },
-    []
+    [setPosition, setSize]
   );
 
   return {
-    x: maximized ? 0 : x,
-    y: maximized ? 0 : y,
-    updatePosition,
-    height: maximized ? '100%' : height,
-    width: maximized ? '100%' : width,
-    updateSize
+    disableDragging: maximized,
+    enableResizing: !maximized,
+    onDragStop: updatePosition,
+    onResizeStop: updateSize,
+    position,
+    size,
+    ...rndDefaults
   };
 };
 
-export default useDraggableAndResizable;
+export default useRnd;

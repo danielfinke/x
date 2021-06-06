@@ -6,7 +6,6 @@ import { useProcesses } from 'contexts/process';
 import useRnd from 'hooks/useRnd';
 import { Rnd } from 'react-rnd';
 import StyledWindow from 'styles/components/system/Window/StyledWindow';
-import rndDefaults from 'utils/rndDefaults';
 
 const Window: FC<ProcessComponentProps> = ({ children, id }) => {
   const {
@@ -14,18 +13,10 @@ const Window: FC<ProcessComponentProps> = ({ children, id }) => {
       [id]: { maximized, minimized }
     }
   } = useProcesses();
-  const { height, width, updateSize, x, y, updatePosition } = useRnd(maximized);
+  const rndProps = useRnd(maximized);
 
   return (
-    <Rnd
-      disableDragging={maximized}
-      enableResizing={!maximized}
-      size={{ height, width }}
-      onDragStop={updatePosition}
-      onResizeStop={updateSize}
-      position={{ x, y }}
-      {...rndDefaults}
-    >
+    <Rnd {...rndProps}>
       <StyledWindow minimized={minimized}>
         <Titlebar id={id} />
         {children}
