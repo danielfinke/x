@@ -50,7 +50,6 @@
         "tsx": "never"
       }
     ],
-    "max-lines": ["error", 80],
     "react/jsx-curly-newline": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "react/jsx-props-no-spreading": "off",
