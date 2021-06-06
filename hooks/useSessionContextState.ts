@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 type WindowState = {
   position?: Position;
-  size: Size;
+  size?: Size;
 };
 
 type WindowStates = {

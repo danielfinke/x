@@ -3,25 +3,24 @@ import type { FC } from 'react';
 
 import Titlebar from 'components/system/Window/Titlebar';
 import { useProcesses } from 'contexts/process';
-import useRnd from 'hooks/useRnd';
-import { Rnd } from 'react-rnd';
 import StyledWindow from 'styles/components/system/Window/StyledWindow';
+
+import RndWindow from './RndWindow';
 
 const Window: FC<ProcessComponentProps> = ({ children, id }) => {
   const {
     processes: {
-      [id]: { maximized, minimized }
+      [id]: { minimized }
     }
   } = useProcesses();
-  const rndProps = useRnd(maximized);
 
   return (
-    <Rnd {...rndProps}>
+    <RndWindow id={id}>
       <StyledWindow minimized={minimized}>
         <Titlebar id={id} />
         {children}
       </StyledWindow>
-    </Rnd>
+    </RndWindow>
   );
 };
 

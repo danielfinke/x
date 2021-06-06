@@ -8,11 +8,14 @@ export type Size = NonNullable<Props['size']>;
 
 type Resizable = [Size, Dispatch<SetStateAction<Size>>];
 
-const useResizable = (maximized = false): Resizable => {
-  const [{ height, width }, setSize] = useState(DEFAULT_WINDOW_SIZE);
+const useResizable = (
+  maximized = false,
+  size = DEFAULT_WINDOW_SIZE
+): Resizable => {
+  const [{ height, width }, setSize] = useState(size);
 
   return [
-    { height: maximized ? 0 : height, width: maximized ? 0 : width },
+    { height: maximized ? '100%' : height, width: maximized ? '100%' : width },
     setSize
   ];
 };
