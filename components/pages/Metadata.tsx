@@ -1,14 +1,14 @@
 import type { FC } from 'react';
 
 import Head from 'next/head';
-import pkg from 'package.json';
+import packageJson from 'package.json';
 
-const { description, name: title } = pkg;
+const { description, name } = packageJson;
 
 const Metadata: FC = () => (
   <Head>
     <meta name="description" content={description} />
-    <title>{title}</title>
+    <title>{name}</title>
   </Head>
 );
 
