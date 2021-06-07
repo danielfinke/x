@@ -14,9 +14,9 @@ type FileEntryProps = {
 };
 
 const FileEntry: FC<FileEntryProps> = ({ name, path }) => {
-  const { icon, pid } = useFileInfo(path);
+  const { icon, pid, url } = useFileInfo(path);
   const { open } = useProcesses();
-  const onClick = useCallback(() => open(pid), [open, pid]);
+  const onClick = useCallback(() => open(pid, url), [open, pid, url]);
 
   return (
     <StyledFileEntry>

@@ -14,7 +14,7 @@ export type ProcessesMap = (
 
 export type ProcessContextState = {
   close: (processId: string) => void;
-  open: (processId: string) => void;
+  open: (processId: string, url: string) => void;
   mapProcesses: ProcessesMap;
   maximize: (processId: string) => void;
   minimize: (processId: string) => void;
@@ -32,7 +32,8 @@ const useProcessContextState = (): ProcessContextState => {
     setProcesses(maximizeProcess(processId));
   const minimize = (processId: string) =>
     setProcesses(minimizeProcess(processId));
-  const open = (processId: string) => setProcesses(openProcess(processId));
+  const open = (processId: string, url: string) =>
+    setProcesses(openProcess(processId, url));
 
   return { close, open, mapProcesses, maximize, minimize, processes };
 };

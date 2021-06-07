@@ -11,14 +11,20 @@ export const closeProcess =
   };
 
 export const openProcess =
-  (processId: string) =>
-  (currentProcesses: Processes): Processes =>
-    currentProcesses[processId] || !processDirectory[processId]
+  (processId: string, url: string) =>
+  (currentProcesses: Processes): Processes => {
+    const id = url ? `${processId}_${url}` : processId;
+
+    return currentProcesses[id] || !processDirectory[id]
       ? currentProcesses
       : {
           ...currentProcesses,
-          [processId]: processDirectory[processId]
+          [id]: {
+            ...processDirectory[id],
+            url
+          }
         };
+  };
 
 const toggleProcessSetting =
   (processId: string, setting: 'maximized' | 'minimized') =>
