@@ -4,6 +4,7 @@ import type { ComponentType } from 'react';
 import dynamic from 'next/dynamic';
 
 export type Process = {
+  autoSizing?: boolean;
   Component: ComponentType<ProcessComponentProps>;
   hasWindow?: boolean;
   icon: string;
