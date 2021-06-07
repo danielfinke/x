@@ -37,7 +37,6 @@ const StyledFileEntry = styled.li`
     }
 
     img {
-      height: ${({ theme }) => theme.sizes.fileEntry.iconSize};
       width: ${({ theme }) => theme.sizes.fileEntry.iconSize};
     }
   }
