@@ -6,11 +6,8 @@ import StyledStartButton from 'styles/components/system/Taskbar/StyledStartButto
 
 const StartButton: FC = () => (
   <ProcessConsumer>
-    {({ close, open }) => (
-      <StyledStartButton
-        onClick={() => open('HelloWorld')}
-        onDoubleClick={() => close('HelloWorld')}
-      >
+    {() => (
+      <StyledStartButton>
         <WindowsIcon />
       </StyledStartButton>
     )}
