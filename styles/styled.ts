@@ -78,7 +78,7 @@ declare module 'styled-components' {
         iconSize: string;
       };
       window: {
-        outline: '1px';
+        outline: string;
       };
     };
     wallpaper?: WallpaperEffect;
