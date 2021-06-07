@@ -10,13 +10,13 @@ import RndWindow from './RndWindow';
 const Window: FC<ProcessComponentProps> = ({ children, id }) => {
   const {
     processes: {
-      [id]: { minimized }
+      [id]: { backgroundColor, minimized }
     }
   } = useProcesses();
 
   return (
     <RndWindow id={id}>
-      <StyledWindow minimized={minimized}>
+      <StyledWindow minimized={minimized} style={{ backgroundColor }}>
         <Titlebar id={id} />
         {children}
       </StyledWindow>

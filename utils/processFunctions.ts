@@ -15,12 +15,12 @@ export const openProcess =
   (currentProcesses: Processes): Processes => {
     const id = url ? `${processId}_${url}` : processId;
 
-    return currentProcesses[id] || !processDirectory[id]
+    return currentProcesses[id] || !processDirectory[processId]
       ? currentProcesses
       : {
           ...currentProcesses,
           [id]: {
-            ...processDirectory[id],
+            ...processDirectory[processId],
             url
           }
         };
