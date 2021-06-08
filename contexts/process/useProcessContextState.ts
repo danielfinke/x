@@ -1,12 +1,12 @@
-import type { Process, Processes } from 'utils/processDirectory';
+import type { Process, Processes } from 'contexts/process/directory';
 
-import { useCallback, useState } from 'react';
 import {
   closeProcess,
   maximizeProcess,
   minimizeProcess,
   openProcess
-} from 'utils/processFunctions';
+} from 'contexts/process/functions';
+import { useCallback, useState } from 'react';
 
 export type ProcessesMap = (
   callback: ([id, process]: [string, Process]) => JSX.Element

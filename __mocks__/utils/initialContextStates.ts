@@ -1,4 +1,4 @@
-import processDirectory from 'utils/processDirectory';
+import processDirectory from 'contexts/process/directory';
 
 const {
   initialFileSystemContextState,

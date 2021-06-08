@@ -1,8 +1,8 @@
 import type { FSModule } from 'browserfs/dist/node/core/FS';
 
 import { BFSRequire, configure } from 'browserfs';
+import FileSystemConfig from 'contexts/fileSystem/FileSystemConfig';
 import { useEffect, useState } from 'react';
-import FileSystemConfig from 'utils/FileSystemConfig';
 
 export type FileSystemContextState = {
   fs?: FSModule;

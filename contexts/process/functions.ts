@@ -1,6 +1,6 @@
-import type { Processes } from 'utils/processDirectory';
+import type { Processes } from 'contexts/process/directory';
 
-import processDirectory from 'utils/processDirectory';
+import processDirectory from 'contexts/process/directory';
 
 export const closeProcess =
   (processId: string) =>
