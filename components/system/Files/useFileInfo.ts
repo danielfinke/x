@@ -1,12 +1,12 @@
-import { useFileSystem } from 'contexts/fileSystem';
-import { extname } from 'path';
-import { useEffect, useState } from 'react';
-import { IMAGE_FILE_EXTENSIONS } from 'utils/constants';
 import {
   getIconByFileExtension,
   getProcessByFileExtension,
   getShortcut
-} from 'utils/fileFunctions';
+} from 'components/system/Files/functions';
+import { useFileSystem } from 'contexts/fileSystem';
+import { extname } from 'path';
+import { useEffect, useState } from 'react';
+import { IMAGE_FILE_EXTENSIONS } from 'utils/constants';
 import { bufferToUrl } from 'utils/functions';
 
 type FileInfo = {

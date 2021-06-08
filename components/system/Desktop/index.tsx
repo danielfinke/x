@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import StyledDesktop from 'components/system/Desktop/StyledDesktop';
-import useWallpaper from 'components/system/Desktop/useWallpaper';
+import useWallpaper from 'components/system/Desktop/wallpapers/useWallpaper';
 import { useRef } from 'react';
 
 const Desktop: FC = ({ children }) => {
