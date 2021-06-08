@@ -1,6 +1,6 @@
+import contextFactory from 'contexts/contextFactory';
+import { initialFileSystemContextState } from 'contexts/initialContextStates';
 import useFileSystemContextState from 'hooks/useFileSystemContextState';
-import contextFactory from 'utils/contextFactory';
-import { initialFileSystemContextState } from 'utils/initialContextStates';
 
 const { Consumer, Provider, useContext } = contextFactory(
   initialFileSystemContextState,
