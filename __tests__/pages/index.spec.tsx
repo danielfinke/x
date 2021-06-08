@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import StyledApp from 'components/pages/StyledApp';
+import * as useFileInfoModule from 'components/system/Files/useFileInfo';
+import * as useFilesModule from 'components/system/Files/useFiles';
 import { SessionProvider } from 'contexts/session';
-import * as useFileInfoModule from 'hooks/useFileInfo';
-import * as useFilesModule from 'hooks/useFiles';
 import * as Router from 'next/router';
 import Index from 'pages/index';
 

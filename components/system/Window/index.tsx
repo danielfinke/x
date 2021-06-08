@@ -1,9 +1,9 @@
 import type { ProcessComponentProps } from 'components/system/Processes/RenderProcess';
 import type { FC } from 'react';
 
+import StyledWindow from 'components/system/Window/StyledWindow';
 import Titlebar from 'components/system/Window/Titlebar';
 import { useProcesses } from 'contexts/process';
-import StyledWindow from 'styles/components/system/Window/StyledWindow';
 
 import RndWindow from './RndWindow';
 

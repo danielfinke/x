@@ -1,4 +1,4 @@
-import type { Size } from 'hooks/useResizable';
+import type { Size } from 'components/system/Window/RndWindow/useResizable';
 import type { Dispatch, SetStateAction } from 'react';
 import type { Position } from 'react-rnd';
 import type themes from 'styles/themes';

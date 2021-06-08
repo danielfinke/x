@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 
-import TaskbarEntryButton from 'components/system/Taskbar/TaskbarEntryButton';
+import StyledTaskbarEntry from 'components/system/Taskbar/TaskbarEntry/StyledTaskbarEntry';
+import TaskbarEntryButton from 'components/system/Taskbar/TaskbarEntry/TaskbarEntryButton';
 import { useProcesses } from 'contexts/process';
 import Image from 'styles/common/Image';
-import StyledTaskbarEntry from 'styles/components/system/Taskbar/StyledTaskbarEntry';
 
 type TaskbarEntryProps = {
   icon: string;

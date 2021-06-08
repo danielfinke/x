@@ -1,6 +1,6 @@
 import type { FC, MouseEventHandler } from 'react';
 
-import StyledTaskbarEntryButton from 'styles/components/system/Taskbar/StyledTaskbarEntryButton';
+import StyledTaskbarEntryButton from 'components/system/Taskbar/TaskbarEntry/StyledTaskbarEntryButton';
 
 type TaskbarEntryButtonProps = {
   onClick: MouseEventHandler<HTMLButtonElement>;

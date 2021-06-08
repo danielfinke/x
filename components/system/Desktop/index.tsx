@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
-import useWallpaper from 'hooks/useWallpaper';
+import StyledDesktop from 'components/system/Desktop/StyledDesktop';
+import useWallpaper from 'components/system/Desktop/useWallpaper';
 import { useRef } from 'react';
-import StyledDesktop from 'styles/components/system/StyledDesktop';
 
 const Desktop: FC = ({ children }) => {
   const desktopRef = useRef<HTMLElement>(null);
