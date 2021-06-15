@@ -1,3 +1,5 @@
+import { stripUnit as polishedStripUnit } from 'polished';
+
 export const loadScript = (src: string, callback: () => void): void => {
   const script = document.createElement('script');
 
@@ -10,5 +12,5 @@ export const loadScript = (src: string, callback: () => void): void => {
 export const bufferToUrl = (buffer: Buffer): string =>
   URL.createObjectURL(new Blob([buffer]));
 
-export const pxToNumber = (value: string): number =>
-  Number(value.replace('px', ''));
+export const stripUnit = (value: string): number =>
+  Number(polishedStripUnit(value));

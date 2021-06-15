@@ -4,7 +4,7 @@ import type { CSSProperties } from 'react';
 import { useSession } from 'contexts/session';
 import { useCallback, useEffect } from 'react';
 import { useTheme } from 'styled-components';
-import { pxToNumber } from 'utils/functions';
+import { stripUnit } from 'utils/functions';
 
 const SET_SCREEN_GFX = 'screen-set-size-graphical';
 const SET_SCREEN_TXT = 'screen-set-size-text';
@@ -36,17 +36,17 @@ const useV86ScreenSize = (
 
   const setScreenGfx = useCallback<EventCallback>(
     ([width, height]) =>
-      updateWindowSize(height + pxToNumber(titleBar.height), width),
+      updateWindowSize(height + stripUnit(titleBar.height), width),
     [titleBar.height, updateWindowSize]
   );
 
   const setScreenText = useCallback<EventCallback>(
     ([cols, rows]) =>
       updateWindowSize(
-        rows * pxToNumber(lineHeight) +
-          pxToNumber(titleBar.height) +
+        rows * stripUnit(lineHeight) +
+          stripUnit(titleBar.height) +
           BORDER_OFFSET,
-        (cols / 2 + 4) * pxToNumber(lineHeight)
+        (cols / 2 + 4) * stripUnit(lineHeight)
       ),
     [lineHeight, titleBar.height, updateWindowSize]
   );
