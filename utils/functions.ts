@@ -1,6 +1,9 @@
 import { extname } from 'path';
 import { stripUnit as polishedStripUnit } from 'polished';
 
+export const bufferToUrl = (buffer: Buffer): string =>
+  URL.createObjectURL(new Blob([buffer]));
+
 const loadScript = (src: string): Promise<Event> =>
   new Promise((resolve, reject) => {
     const loadedScripts = [...document.scripts];
@@ -48,9 +51,6 @@ export const loadFiles = (files: string[]): Promise<Event[]> =>
       return filesToLoad;
     }, [])
   );
-
-export const bufferToUrl = (buffer: Buffer): string =>
-  URL.createObjectURL(new Blob([buffer]));
 
 export const stripUnit = (value: string): number =>
   Number(polishedStripUnit(value));
