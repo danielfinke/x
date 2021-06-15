@@ -19,21 +19,19 @@ const StyledFileEntry = styled.li`
       position: absolute;
       right: -1px;
       top: -1px;
-
-      /**
-       * Pseudo-element is positioned, need to keep this element behind the button so the button can
-       * be clicked
-       */
-      z-index: -1;
     }
   }
 
   button {
+    position: relative;
+
     figcaption {
       color: ${({ theme }) => theme.colors.fileEntry.text};
       font-size: ${({ theme }) => theme.sizes.fileEntry.fontSize};
       letter-spacing: ${({ theme }) => theme.sizes.fileEntry.letterSpacing};
+      position: relative;
       text-shadow: ${({ theme }) => theme.colors.fileEntry.textShadow};
+      top: -1px;
     }
 
     img {
