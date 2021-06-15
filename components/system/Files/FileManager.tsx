@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import FileEntry from 'components/system/Files/FileEntry';
+import StyledFileEntry from 'components/system/Files/StyledFileEntry';
 import StyledFileManager from 'components/system/Files/StyledFileManager';
 import useFileDrop from 'components/system/Files/useFileDrop';
 import useFiles from 'components/system/Files/useFiles';
@@ -16,11 +17,12 @@ const FileManager: FC<FileManagerProps> = ({ directory }) => {
   return (
     <StyledFileManager {...useFileDrop(directory, getFiles)}>
       {files.map((file) => (
-        <FileEntry
-          key={file}
-          name={basename(file, extname(file))}
-          path={resolve(directory, file)}
-        />
+        <StyledFileEntry key={file}>
+          <FileEntry
+            name={basename(file, extname(file))}
+            path={resolve(directory, file)}
+          />
+        </StyledFileEntry>
       ))}
     </StyledFileManager>
   );
