@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const StyledTaskbarEntries = styled.ol`
+  column-gap: 1px;
   display: flex;
-  gap: 5px;
+  margin: 0 3px;
 
   /* Allow shrinking past min-content */
   min-width: 0;
-  padding: 0 5px;
   width: 100%;
 `;
 
