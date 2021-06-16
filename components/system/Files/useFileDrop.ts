@@ -13,7 +13,10 @@ type FileDrop = {
   onDrop: (event: DragEvent<HTMLElement>) => void;
 };
 
-const useFileDrop = (directory: string, getFiles: () => void): FileDrop => {
+const useFileDrop = (
+  directory: string,
+  updateFiles: (appendFile?: string) => void
+): FileDrop => {
   const { fs } = useFileSystem();
   const onDrop = useCallback(
     (event: DragEvent<HTMLElement>) => {
@@ -26,12 +29,12 @@ const useFileDrop = (directory: string, getFiles: () => void): FileDrop => {
         fs?.writeFile(
           `${directory}/${file.name}`,
           Buffer.from(target?.result as ArrayBuffer),
-          getFiles
+          (error) => !error && updateFiles(file.name)
         );
 
       reader.readAsArrayBuffer(file);
     },
-    [directory, fs, getFiles]
+    [directory, fs, updateFiles]
   );
 
   return {
