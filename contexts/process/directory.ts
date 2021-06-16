@@ -36,7 +36,7 @@ const processDirectory: Processes = {
       () => import('components/apps/V86')
     ),
     hasWindow: true,
-    icon: '/icons/v86.ico',
+    icon: '/icons/v86.png',
     title: 'V86'
   }
 };
