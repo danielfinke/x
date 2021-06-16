@@ -28,7 +28,7 @@ const sizes = {
         margin: '5px',
         size: '16px'
       },
-      maxWidth: '161px'
+      maxWidth: '160px'
     },
     height: '36px'
   },
