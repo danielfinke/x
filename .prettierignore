@@ -1,4 +1,5 @@
 *.url
+/.eslintignore
 /.husky
 /.next
 /.prettierignore
