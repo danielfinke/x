@@ -15,11 +15,15 @@ type WindowStates = {
 };
 
 type Session = {
+  foregroundId: string;
+  stackOrder: string[];
   themeName: string;
   windowStates: WindowStates;
 };
 
 export type SessionContextState = {
+  setForegroundId: Dispatch<SetStateAction<string>>;
+  setStackOrder: Dispatch<SetStateAction<string[]>>;
   setThemeName: Dispatch<SetStateAction<string>>;
   setWindowStates: Dispatch<SetStateAction<WindowStates>>;
 } & Session;
@@ -29,6 +33,8 @@ const SESSION_FILE = '/session.json';
 const useSessionContextState = (): SessionContextState => {
   const { fs } = useFileSystem();
   const [sessionLoaded, setSessionLoaded] = useState(false);
+  const [foregroundId, setForegroundId] = useState('');
+  const [stackOrder, setStackOrder] = useState<string[]>([]);
   const [themeName, setThemeName] = useState('');
   const [windowStates, setWindowStates] = useState<WindowStates>({});
 
@@ -37,12 +43,14 @@ const useSessionContextState = (): SessionContextState => {
       fs?.writeFile(
         SESSION_FILE,
         JSON.stringify({
+          foregroundId,
+          stackOrder,
           themeName,
           windowStates
         })
       );
     }
-  }, [fs, sessionLoaded, themeName, windowStates]);
+  }, [fs, foregroundId, sessionLoaded, stackOrder, themeName, windowStates]);
 
   useEffect(
     () =>
@@ -50,6 +58,8 @@ const useSessionContextState = (): SessionContextState => {
         if (contents) {
           const session: Session = JSON.parse(contents.toString());
 
+          setForegroundId(session.foregroundId);
+          setStackOrder(session.stackOrder || []);
           setThemeName(session.themeName);
           setWindowStates(session.windowStates);
         }
@@ -59,7 +69,16 @@ const useSessionContextState = (): SessionContextState => {
     [fs]
   );
 
-  return { setThemeName, setWindowStates, themeName, windowStates };
+  return {
+    foregroundId,
+    setForegroundId,
+    setStackOrder,
+    setThemeName,
+    setWindowStates,
+    stackOrder,
+    themeName,
+    windowStates
+  };
 };
 
 export default useSessionContextState;

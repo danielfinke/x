@@ -1,5 +1,5 @@
 import type { ProcessComponentProps } from 'components/system/Processes/RenderProcess';
-import type { FC } from 'react';
+import type { CSSProperties, FC, ReactNode } from 'react';
 
 import useRnd from 'components/system/Window/RndWindow/useRnd';
 import { useProcesses } from 'contexts/process';
@@ -8,7 +8,12 @@ import { useEffect, useRef } from 'react';
 import { Rnd } from 'react-rnd';
 import { DEFAULT_WINDOW_SIZE } from 'utils/constants';
 
-const RndWindow: FC<ProcessComponentProps> = ({ children, id }) => {
+type RndWindowProps = {
+  children: ReactNode;
+  style: CSSProperties;
+} & ProcessComponentProps;
+
+const RndWindow: FC<RndWindowProps> = ({ children, id, style }) => {
   const {
     processes: {
       [id]: { autoSizing, maximized }
@@ -32,7 +37,7 @@ const RndWindow: FC<ProcessComponentProps> = ({ children, id }) => {
   }, [autoSizing, id, setWindowStates]);
 
   return (
-    <Rnd ref={rndRef} {...rndProps}>
+    <Rnd ref={rndRef} style={style} {...rndProps}>
       {children}
     </Rnd>
   );
