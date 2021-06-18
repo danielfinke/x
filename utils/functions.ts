@@ -4,6 +4,8 @@ import { stripUnit as polishedStripUnit } from 'polished';
 export const bufferToUrl = (buffer: Buffer): string =>
   URL.createObjectURL(new Blob([buffer]));
 
+export const cleanupBufferUrl = (url: string): void => URL.revokeObjectURL(url);
+
 const loadScript = (src: string): Promise<Event> =>
   new Promise((resolve, reject) => {
     const loadedScripts = [...document.scripts];
