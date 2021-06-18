@@ -25,9 +25,10 @@ const useFocusable = (
       ...currentStackOrder.filter((stackId) => stackId !== id)
     ]);
     setForegroundId(id);
-  }, [id, setForegroundId, setStackOrder]);
+    windowRef.current?.focus();
+  }, [id, setForegroundId, setStackOrder, windowRef]);
 
-  useEffect(() => windowRef.current?.focus(), [moveToFront, windowRef]);
+  useEffect(moveToFront, [moveToFront]);
 
   useEffect(() => {
     if (isForeground) {

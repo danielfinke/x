@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import StyledTaskbarEntry from 'components/system/Taskbar/TaskbarEntry/StyledTaskbarEntry';
 import TaskbarEntryButton from 'components/system/Taskbar/TaskbarEntry/TaskbarEntryButton';
 import { useProcesses } from 'contexts/process';
+import { useSession } from 'contexts/session';
 import Image from 'styles/common/Image';
 
 type TaskbarEntryProps = {
@@ -16,8 +17,12 @@ const TaskbarEntry: FC<TaskbarEntryProps> = ({
   id,
   title = 'Hello World'
 }) => {
+  const { setForegroundId } = useSession();
   const { minimize } = useProcesses();
-  const onClick = () => minimize(id);
+  const onClick = () => {
+    minimize(id);
+    setForegroundId(id);
+  };
 
   return (
     <StyledTaskbarEntry>
