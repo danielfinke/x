@@ -14,8 +14,10 @@ const useFocusable = (
   id: string,
   windowRef: RefObject<HTMLElement>
 ): Focusable => {
-  const { setForegroundId, setStackOrder, stackOrder } = useSession();
+  const { foregroundId, setForegroundId, setStackOrder, stackOrder } =
+    useSession();
   const zIndex = stackOrder.length - stackOrder.indexOf(id) + 1;
+  const isForeground = id === foregroundId;
   const onBlur = useCallback(() => setForegroundId(''), [setForegroundId]);
   const moveToFront = useCallback(() => {
     setStackOrder((currentStackOrder) => [
@@ -26,6 +28,12 @@ const useFocusable = (
   }, [id, setForegroundId, setStackOrder]);
 
   useEffect(() => windowRef.current?.focus(), [moveToFront, windowRef]);
+
+  useEffect(() => {
+    if (isForeground) {
+      moveToFront();
+    }
+  }, [isForeground, moveToFront]);
 
   return {
     onBlur,

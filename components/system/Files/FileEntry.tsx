@@ -3,6 +3,8 @@ import type { FC } from 'react';
 import useDoubleClick from 'components/system/Files/useDoubleClick';
 import useFileInfo from 'components/system/Files/useFileInfo';
 import { useProcesses } from 'contexts/process';
+import { createPid } from 'contexts/process/functions';
+import { useSession } from 'contexts/session';
 import { useCallback } from 'react';
 import Button from 'styles/common/Button';
 import Image from 'styles/common/Image';
@@ -14,8 +16,16 @@ type FileEntryProps = {
 
 const FileEntry: FC<FileEntryProps> = ({ name, path }) => {
   const { icon, pid, url } = useFileInfo(path);
-  const { open } = useProcesses();
-  const onClick = useCallback(() => open(pid, url), [open, pid, url]);
+  const { setForegroundId } = useSession();
+  const { open, processes } = useProcesses();
+  const onClick = useCallback(() => {
+    const id = createPid(pid, url);
+    if (processes[id]) {
+      setForegroundId(id);
+    } else {
+      open(pid, url);
+    }
+  }, [open, pid, processes, setForegroundId, url]);
 
   return (
     <Button title={name} onClick={useDoubleClick(onClick)}>
