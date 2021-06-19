@@ -15,7 +15,7 @@
     "plugin:jest-dom/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:testing-library/dom",
+    "plugin:testing-library/react",
     "plugin:prettier/recommended"
   ],
   "globals": {
