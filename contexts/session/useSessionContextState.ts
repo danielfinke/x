@@ -56,12 +56,16 @@ const useSessionContextState = (): SessionContextState => {
     () =>
       fs?.readFile(SESSION_FILE, (error, contents) => {
         if (contents) {
-          const session: Session = JSON.parse(contents.toString());
+          try {
+            const session: Session = JSON.parse(contents.toString());
 
-          setForegroundId(session.foregroundId);
-          setStackOrder(session.stackOrder || []);
-          setThemeName(session.themeName);
-          setWindowStates(session.windowStates);
+            setForegroundId(session.foregroundId);
+            setStackOrder(session.stackOrder || []);
+            setThemeName(session.themeName);
+            setWindowStates(session.windowStates);
+          } catch {
+            // Couldn't parse session, fall back to defaults
+          }
         }
 
         setSessionLoaded(true);
