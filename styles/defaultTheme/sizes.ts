@@ -25,7 +25,7 @@ const sizes = {
       borderSize: '2px',
       fontSize: '12px',
       icon: {
-        margin: '5px',
+        margin: '4px',
         size: '16px'
       },
       maxWidth: '160px'
