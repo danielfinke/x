@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import useDoubleClick from 'components/system/Files/useDoubleClick';
-import useFileInfo from 'components/system/Files/useFileInfo';
+import useFileInfo from 'components/system/Files/FileEntry/useFileInfo';
+import useDoubleClick from 'components/system/useDoubleClick';
 import { useProcesses } from 'contexts/process';
 import { createPid } from 'contexts/process/functions';
 import { useSession } from 'contexts/session';
