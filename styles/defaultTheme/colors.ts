@@ -1,5 +1,3 @@
-const OPAQUE_WHITE = 'rgba(255, 255, 255, 80%)';
-
 const colors = {
   background: '#000',
   fileEntry: {
@@ -23,7 +21,7 @@ const colors = {
     background: 'rgba(0, 0, 0, 60%)',
     hover: 'hsla(0, 0%, 25%, 70%)'
   },
-  text: OPAQUE_WHITE,
+  text: 'rgba(255, 255, 255, 90%)',
   titleBar: {
     background: '#000',
     backgroundHover: 'rgb(26, 26, 26)',
@@ -32,7 +30,7 @@ const colors = {
   },
   window: {
     background: '#808080',
-    outline: 'hsl(0deg 0% 25% / 80%)',
+    outline: 'hsl(0deg 0% 20% / 80%)',
     shadow: '0 0 12px 0 rgba(0, 0, 0, 50%)'
   }
 };

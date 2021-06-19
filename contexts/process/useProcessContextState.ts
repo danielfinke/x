@@ -8,7 +8,7 @@ import {
 } from 'contexts/process/functions';
 import { useCallback, useState } from 'react';
 
-export type ProcessesMap = (
+type ProcessesMap = (
   callback: ([id, process]: [string, Process]) => JSX.Element
 ) => JSX.Element[];
 

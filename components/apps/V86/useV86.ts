@@ -9,7 +9,7 @@ import {
 import { useFileSystem } from 'contexts/fileSystem';
 import { extname } from 'path';
 import { useCallback, useEffect, useState } from 'react';
-import { bufferToUrl, cleanupBufferUrl, loadFiles } from 'utils/functions';
+import { bufferToUrl, cleanUpBufferUrl, loadFiles } from 'utils/functions';
 
 const useV86 = (
   url: string,
@@ -20,7 +20,7 @@ const useV86 = (
   const { fs } = useFileSystem();
 
   useEffect(() => {
-    if (!emulator && fs && url && screenContainer) {
+    if (!emulator && fs && url && screenContainer.current) {
       fs?.readFile(url, (_error, contents = Buffer.from('')) => {
         loadFiles(['/libs/v86/libv86.js']).then(() => {
           const isISO = extname(url).toLowerCase() === '.iso';
@@ -42,7 +42,7 @@ const useV86 = (
           });
 
           v86.add_listener('emulator-loaded', () =>
-            cleanupBufferUrl(bufferUrl)
+            cleanUpBufferUrl(bufferUrl)
           );
 
           setEmulator(v86);

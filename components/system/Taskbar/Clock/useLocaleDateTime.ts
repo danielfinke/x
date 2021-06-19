@@ -3,8 +3,8 @@ import { DEFAULT_LOCALE } from 'utils/constants';
 
 type LocaleDateTime = {
   date: string;
-  time: string;
   dateTime: string;
+  time: string;
 };
 
 const useLocaleDateTime = (now: Date): LocaleDateTime => {

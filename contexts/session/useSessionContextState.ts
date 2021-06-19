@@ -54,7 +54,7 @@ const useSessionContextState = (): SessionContextState => {
 
   useEffect(
     () =>
-      fs?.readFile(SESSION_FILE, (error, contents) => {
+      fs?.readFile(SESSION_FILE, (_error, contents) => {
         if (contents) {
           try {
             const session: Session = JSON.parse(contents.toString());

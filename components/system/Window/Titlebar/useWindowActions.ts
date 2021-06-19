@@ -13,8 +13,8 @@ type WindowActions = {
 
 const useWindowActions = (id: string): WindowActions => {
   const nextFocusableId = useNextFocusableId(id);
-  const { close, maximize, minimize } = useProcesses();
   const { setForegroundId, setStackOrder } = useSession();
+  const { close, maximize, minimize } = useProcesses();
   const onMinimize = () => {
     minimize(id);
     setForegroundId(nextFocusableId);

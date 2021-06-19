@@ -16,7 +16,7 @@ export type Process = {
 };
 
 export type Processes = {
-  [processId: string]: Process;
+  [id: string]: Process;
 };
 
 const processDirectory: Processes = {
@@ -37,7 +37,7 @@ const processDirectory: Processes = {
     ),
     hasWindow: true,
     icon: '/icons/v86.png',
-    title: 'V86'
+    title: 'v86'
   }
 };
 
