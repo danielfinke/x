@@ -6,11 +6,12 @@ import { forwardRef } from 'react';
 type TaskbarEntryButtonProps = {
   onClick: MouseEventHandler<HTMLButtonElement>;
   ref: Ref<HTMLButtonElement>;
+  title: string;
 };
 
 const TaskbarEntryButton: FC<TaskbarEntryButtonProps> = forwardRef(
-  ({ children, onClick }, ref) => (
-    <StyledTaskbarEntryButton ref={ref} onClick={onClick}>
+  ({ children, onClick, title }, ref) => (
+    <StyledTaskbarEntryButton ref={ref} onClick={onClick} title={title}>
       {children}
     </StyledTaskbarEntryButton>
   )
