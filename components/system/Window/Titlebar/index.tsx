@@ -9,6 +9,7 @@ import {
   MinimizeIcon
 } from 'components/system/Window/Titlebar/WindowActionIcons';
 import { useProcesses } from 'contexts/process';
+import { useSession } from 'contexts/session';
 import Button from 'styles/common/Button';
 import Image from 'styles/common/Image';
 
@@ -22,10 +23,12 @@ const Titlebar: FC<TitlebarProps> = ({ id }) => {
       [id]: { autoSizing, icon, title, maximized }
     }
   } = useProcesses();
+  const { foregroundId } = useSession();
+  const isForeground = id === foregroundId;
   const { onClose, onMaximize, onMinimize } = useWindowActions(id);
 
   return (
-    <StyledTitlebar className="handle">
+    <StyledTitlebar className="handle" foreground={isForeground}>
       <h1>
         <figure>
           <Image src={icon} alt={title} $size={16} />
