@@ -23,6 +23,8 @@ const StyledTaskbarEntryButton = styled(Button)`
       height: ${({ theme }) => theme.sizes.taskbar.entry.icon.size};
       image-rendering: pixelated;
       margin: ${({ theme }) => theme.sizes.taskbar.entry.icon.margin};
+      position: relative;
+      top: 1px;
       width: ${({ theme }) => theme.sizes.taskbar.entry.icon.size};
     }
   }

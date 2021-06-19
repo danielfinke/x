@@ -22,6 +22,7 @@ const StyledTaskbarEntryListItem = styled.li<StyledTaskbarEntryProps>`
   /* Allow shrinking past min-content */
   min-width: 0;
   padding: ${({ foreground }) => (foreground ? '0 4px' : '')};
+  transition: all 0.075s;
 
   &:hover {
     background-color: ${({ foreground, theme }) =>
