@@ -1,6 +1,7 @@
 import type { DragEvent } from 'react';
 
 import { useFileSystem } from 'contexts/fileSystem';
+import { basename, dirname, extname } from 'path';
 import { useCallback } from 'react';
 
 const haltDragEvent = (event: DragEvent<HTMLElement>): void => {
@@ -11,6 +12,13 @@ const haltDragEvent = (event: DragEvent<HTMLElement>): void => {
 type FileDrop = {
   onDragOver: (event: DragEvent<HTMLElement>) => void;
   onDrop: (event: DragEvent<HTMLElement>) => void;
+};
+
+const iterateFileName = (path: string, iteration: number): string => {
+  const extension = extname(path);
+  const fileName = basename(path, extension);
+
+  return `${dirname(path)}/${fileName} (${iteration})${extension}`;
 };
 
 const useFileDrop = (
@@ -25,13 +33,33 @@ const useFileDrop = (
       const { files: [file] = [] } = event.dataTransfer || {};
 
       if (file) {
+        const writeUniqueName = (
+          path: string,
+          fileBuffer: Buffer,
+          iteration = 0
+        ): void => {
+          const writePath = !iteration
+            ? path
+            : iterateFileName(path, iteration);
+
+          fs?.stat(writePath, (statError) => {
+            if (statError?.code === 'ENOENT') {
+              fs?.writeFile(
+                writePath,
+                fileBuffer,
+                (writeError) => !writeError && updateFiles(writePath)
+              );
+            } else {
+              writeUniqueName(path, fileBuffer, iteration + 1);
+            }
+          });
+        };
         const reader = new FileReader();
 
         reader.onload = ({ target }) =>
-          fs?.writeFile(
+          writeUniqueName(
             `${directory}/${file.name}`,
-            Buffer.from(target?.result as ArrayBuffer),
-            (error) => !error && updateFiles(file.name)
+            Buffer.from(target?.result as ArrayBuffer)
           );
 
         reader.readAsArrayBuffer(file);
