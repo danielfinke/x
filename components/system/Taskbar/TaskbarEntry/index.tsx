@@ -2,8 +2,10 @@ import type { FC } from 'react';
 
 import StyledTaskbarEntry from 'components/system/Taskbar/TaskbarEntry/StyledTaskbarEntry';
 import TaskbarEntryButton from 'components/system/Taskbar/TaskbarEntry/TaskbarEntryButton';
+import useNextFocusableId from 'components/system/Window/useNextFocusableId';
 import { useProcesses } from 'contexts/process';
 import { useSession } from 'contexts/session';
+import { useCallback } from 'react';
 import Image from 'styles/common/Image';
 
 type TaskbarEntryProps = {
@@ -17,16 +19,34 @@ const TaskbarEntry: FC<TaskbarEntryProps> = ({
   id,
   title = 'Hello World'
 }) => {
-  const { setForegroundId } = useSession();
-  const { minimize } = useProcesses();
-  const onClick = () => {
-    minimize(id);
-    setForegroundId(id);
-  };
+  const nextFocusableId = useNextFocusableId(id);
+  const { foregroundId, setForegroundId } = useSession();
+  const isForeground = id === foregroundId;
+  const {
+    linkElement,
+    minimize,
+    processes: {
+      [id]: { minimized, taskbarEntry }
+    }
+  } = useProcesses();
+  const linkTaskbarEntry = useCallback(
+    (newTaskbarEntry: HTMLButtonElement) =>
+      newTaskbarEntry &&
+      taskbarEntry !== newTaskbarEntry &&
+      linkElement(id, 'taskbarEntry', newTaskbarEntry),
+    [id, linkElement, taskbarEntry]
+  );
+  const onClick = useCallback(() => {
+    if (minimized || isForeground) {
+      minimize(id);
+    }
+
+    setForegroundId(isForeground ? nextFocusableId : id);
+  }, [id, isForeground, minimize, minimized, nextFocusableId, setForegroundId]);
 
   return (
-    <StyledTaskbarEntry>
-      <TaskbarEntryButton onClick={onClick}>
+    <StyledTaskbarEntry foreground={isForeground}>
+      <TaskbarEntryButton onClick={onClick} ref={linkTaskbarEntry}>
         <figure>
           <Image src={icon} alt={title} />
           <figcaption>{title}</figcaption>

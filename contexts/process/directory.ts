@@ -3,17 +3,25 @@ import type { ComponentType } from 'react';
 
 import dynamic from 'next/dynamic';
 
-export type Process = {
-  autoSizing?: boolean;
-  backgroundColor?: string;
-  Component: ComponentType<ProcessComponentProps>;
-  hasWindow?: boolean;
-  icon: string;
+export type ProcessElements = {
+  taskbarEntry?: HTMLElement;
+};
+
+export type ProcessToggles = {
   maximized?: boolean;
   minimized?: boolean;
-  title: string;
-  url?: string;
 };
+
+export type Process = ProcessElements &
+  ProcessToggles & {
+    autoSizing?: boolean;
+    backgroundColor?: string;
+    Component: ComponentType<ProcessComponentProps>;
+    hasWindow?: boolean;
+    icon: string;
+    title: string;
+    url?: string;
+  };
 
 export type Processes = {
   [id: string]: Process;
