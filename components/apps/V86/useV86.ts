@@ -6,15 +6,18 @@ import {
   BOOT_FD_CD_HD,
   config as v86Config
 } from 'components/apps/V86/config';
+import useTitle from 'components/system/Window/useTitle';
 import { useFileSystem } from 'contexts/fileSystem';
 import { extname } from 'path';
 import { useCallback, useEffect, useState } from 'react';
 import { bufferToUrl, cleanUpBufferUrl, loadFiles } from 'utils/functions';
 
 const useV86 = (
+  id: string,
   url: string,
   screenContainer: MutableRefObject<HTMLDivElement | null>
 ): V86 => {
+  const { appendFileToTitle } = useTitle(id);
   const [emulator, setEmulator] = useState<V86Starter | null>(null);
   const lockMouse = useCallback(() => emulator?.lock_mouse?.(), [emulator]);
   const { fs } = useFileSystem();
@@ -41,9 +44,10 @@ const useV86 = (
             ...v86Config
           });
 
-          v86.add_listener('emulator-loaded', () =>
-            cleanUpBufferUrl(bufferUrl)
-          );
+          v86.add_listener('emulator-loaded', () => {
+            appendFileToTitle.current?.(url);
+            cleanUpBufferUrl(bufferUrl);
+          });
 
           setEmulator(v86);
         });
@@ -51,7 +55,7 @@ const useV86 = (
     }
 
     return () => emulator?.destroy?.();
-  }, [emulator, fs, screenContainer, url]);
+  }, [appendFileToTitle, emulator, fs, screenContainer, url]);
 
   return {
     emulator,

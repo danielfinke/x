@@ -55,7 +55,7 @@ const processDirectory: Processes = {
     ),
     hasWindow: true,
     icon: '/icons/jsdos.png',
-    title: 'JS-DOS'
+    title: 'js-dos v7'
   },
   V86: {
     autoSizing: true,
@@ -66,7 +66,7 @@ const processDirectory: Processes = {
     ),
     hasWindow: true,
     icon: '/icons/v86.png',
-    title: 'v86'
+    title: 'Virtual x86'
   }
 };
 
