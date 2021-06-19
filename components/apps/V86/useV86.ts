@@ -4,7 +4,8 @@ import type { MutableRefObject } from 'react';
 import {
   BOOT_CD_FD_HD,
   BOOT_FD_CD_HD,
-  config as v86Config
+  config as v86Config,
+  libs
 } from 'components/apps/V86/config';
 import useTitle from 'components/system/Window/useTitle';
 import { useFileSystem } from 'contexts/fileSystem';
@@ -25,7 +26,7 @@ const useV86 = (
   useEffect(() => {
     if (!emulator && fs && url && screenContainer.current) {
       fs?.readFile(url, (_error, contents = Buffer.from('')) => {
-        loadFiles(['/libs/v86/libv86.js']).then(() => {
+        loadFiles(libs).then(() => {
           const isISO = extname(url).toLowerCase() === '.iso';
           const { deviceMemory = 8 } = navigator;
           const memoryRatio = deviceMemory / 8;
