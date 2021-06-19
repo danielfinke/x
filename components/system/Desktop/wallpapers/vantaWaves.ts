@@ -33,9 +33,9 @@ const vantaWaves =
       : null;
 
     if (vantaEffect) {
-      const { onDestroy } = colorCycle(settings.color, (color: number) => {
-        vantaEffect.options.color = color;
-      });
+      const { onDestroy } = colorCycle(settings.color, (color: number) =>
+        vantaEffect.setOptions({ color })
+      );
 
       vantaEffect.onDestroy = onDestroy;
     }
