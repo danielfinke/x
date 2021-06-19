@@ -31,7 +31,7 @@ const FileEntry: FC<FileEntryProps> = ({ name, path }) => {
   return (
     <Button title={name} onClick={useDoubleClick(onClick)}>
       <figure>
-        <Image src={icon} alt={name} />
+        <Image src={icon} alt={name} $size={48} />
         <figcaption>{name}</figcaption>
       </figure>
     </Button>

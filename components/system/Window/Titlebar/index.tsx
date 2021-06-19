@@ -28,7 +28,7 @@ const Titlebar: FC<TitlebarProps> = ({ id }) => {
     <StyledTitlebar className="handle">
       <h1>
         <figure>
-          <Image src={icon} alt={title} draggable={false} />
+          <Image src={icon} alt={title} $size={16} />
           <figcaption>{title}</figcaption>
         </figure>
       </h1>

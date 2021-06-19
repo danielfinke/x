@@ -48,7 +48,7 @@ const TaskbarEntry: FC<TaskbarEntryProps> = ({
     <StyledTaskbarEntry foreground={isForeground}>
       <TaskbarEntryButton onClick={onClick} ref={linkTaskbarEntry}>
         <figure>
-          <Image src={icon} alt={title} />
+          <Image src={icon} alt={title} $size={16} />
           <figcaption>{title}</figcaption>
         </figure>
       </TaskbarEntryButton>
