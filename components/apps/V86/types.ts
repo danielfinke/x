@@ -37,9 +37,6 @@ interface V86Constructor {
   new (config: V86Config): V86Starter;
 }
 
-export type WindowWithV86Starter = Window &
-  typeof globalThis & { V86Starter: V86Constructor };
-
 declare global {
   interface Window {
     V86Starter: V86Constructor;
