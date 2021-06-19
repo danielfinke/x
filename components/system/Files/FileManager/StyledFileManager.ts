@@ -1,3 +1,4 @@
+import StyledWindow from 'components/system/Window/StyledWindow';
 import styled from 'styled-components';
 
 const StyledFileManager = styled.ol`
@@ -11,6 +12,10 @@ const StyledFileManager = styled.ol`
   height: 100%;
   padding: ${({ theme }) => theme.sizes.fileManager.padding};
   row-gap: ${({ theme }) => theme.sizes.fileManager.rowGap};
+
+  ${StyledWindow} & {
+    grid-auto-flow: row;
+  }
 `;
 
 export default StyledFileManager;

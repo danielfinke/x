@@ -28,6 +28,16 @@ export type Processes = {
 };
 
 const processDirectory: Processes = {
+  FileExplorer: {
+    backgroundColor: '#202020',
+    Component: dynamic<ProcessComponentProps>(
+      // eslint-disable-next-line import/no-cycle
+      () => import('components/apps/FileExplorer')
+    ),
+    hasWindow: true,
+    icon: '/icons/explorer.png',
+    title: 'File Explorer'
+  },
   HelloWorld: {
     Component: dynamic<ProcessComponentProps>(
       () => import('components/apps/HelloWorld')
