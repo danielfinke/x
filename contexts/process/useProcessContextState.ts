@@ -51,8 +51,10 @@ const useProcessContextState = (): ProcessContextState => {
     name: keyof ProcessElements,
     element: HTMLElement
   ) => setProcesses(setProcessElement(id, name, element));
-  const title = (id: string, newTitle: string) =>
-    setProcesses(setTitle(id, newTitle));
+  const title = useCallback(
+    (id: string, newTitle: string) => setProcesses(setTitle(id, newTitle)),
+    []
+  );
 
   return {
     close,
