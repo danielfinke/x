@@ -6,9 +6,9 @@ const StyledFileManager = styled.ol`
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: ${({ theme }) =>
-    `repeat(auto-fill, ${theme.sizes.fileManager.gridEntryWidth})`};
+    `repeat(auto-fill, ${theme.sizes.fileManager.gridEntryWidth}) `};
   grid-template-rows: ${({ theme }) =>
-    `repeat(auto-fill, ${theme.sizes.fileManager.gridEntryHeight})`};
+    `repeat(auto-fill, ${theme.sizes.fileManager.gridEntryHeight}) `};
   height: 100%;
   padding: ${({ theme }) => theme.sizes.fileManager.padding};
   row-gap: ${({ theme }) => theme.sizes.fileManager.rowGap};

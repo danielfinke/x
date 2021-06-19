@@ -17,7 +17,7 @@ const StyledTaskbarEntryListItem = styled.li<StyledTaskbarEntryProps>`
   max-width: ${({ foreground, theme }) =>
     foreground
       ? theme.sizes.taskbar.entry.maxWidth
-      : `calc(${theme.sizes.taskbar.entry.maxWidth} - 8px)`};
+      : `calc(${theme.sizes.taskbar.entry.maxWidth} - 8px) `};
 
   /* Allow shrinking past min-content */
   min-width: 0;
