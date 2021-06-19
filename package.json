@@ -21,6 +21,9 @@
     "test:watch": "jest --watch",
     "prepare": "husky install"
   },
+  "browserslist": [
+    "defaults and supports es6 and not ie 11"
+  ],
   "lint-staged": {
     "*": "prettier --write",
     "*.{js,jsx,ts,tsx}": "eslint --fix",
